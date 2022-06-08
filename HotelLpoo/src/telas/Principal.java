@@ -1,5 +1,6 @@
 package telas;
 
+import gravacao.GravarArquivo;
 import usuario.*;
 import Quartos.*;
 import java.io.*;

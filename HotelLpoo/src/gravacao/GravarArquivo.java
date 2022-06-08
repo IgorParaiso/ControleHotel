@@ -1,4 +1,4 @@
-package telas;
+package gravacao;
 
 import java.io.*;
 
@@ -15,7 +15,5 @@ public class GravarArquivo {
             throw new IOException ("Arquivo nao pode ser aberto para gravacao");
         }  
     }
-    
-   
 }
 
