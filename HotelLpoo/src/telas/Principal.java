@@ -1,8 +1,9 @@
-package hotellpoo;
+package telas;
 
+import usuario.*;
+import Quartos.*;
 import java.io.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 
 /**
  *
@@ -19,7 +20,7 @@ public class Principal extends javax.swing.JFrame {
         try {
             this.salvar = new GravarArquivo("Usuario");
         } catch (IOException ex) {
-            Logger.getLogger(Principal.class.getName());
+            
         }
     }
 

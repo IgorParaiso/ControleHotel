@@ -1,4 +1,6 @@
-package hotellpoo;
+package Quartos;
+
+import usuario.Usuario;
 
 /**
  *

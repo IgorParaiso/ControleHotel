@@ -1,4 +1,4 @@
-package hotellpoo;
+package usuario;
 
 public class Usuario {
 	private String nome, cpf, dataNasc, paisOrigem, idiomaAtend;

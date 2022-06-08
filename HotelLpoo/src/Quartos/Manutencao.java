@@ -1,4 +1,4 @@
-package hotellpoo;
+package Quartos;
 
 public interface Manutencao {
 	public void limpar(Quarto quarto);

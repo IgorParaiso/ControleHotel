@@ -1,16 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package hotellpoo;
+package usuario;
 
 import java.util.ArrayList;
 
-/**
- *
- * @author Igor Paraiso
- */
-class ListaUsuario {
+public class ListaUsuario {
     private ArrayList<Usuario> listaUsuario;
     
     public ListaUsuario (){

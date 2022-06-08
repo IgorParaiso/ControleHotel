@@ -1,4 +1,4 @@
-package hotellpoo;
+package telas;
 
 import java.io.*;
 
