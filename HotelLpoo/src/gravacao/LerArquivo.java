@@ -7,6 +7,7 @@ import usuario.Usuario;
 
 public class LerArquivo {
     private Scanner entrada;
+    private int num;
     
     public LerArquivo (String nome) throws FileNotFoundException{
         try {
