@@ -60,7 +60,11 @@ public class Usuario {
 	public void setIdiomaAtend(String idiomaAtend) {
 		this.idiomaAtend = idiomaAtend;
 	}
-
+        
+        @Override
+        public String toString(){
+            return nome + "," + cpf + "," + dataNasc + "," + telefone + "," + "," + paisOrigem + "," + idiomaAtend + "\n";
+        }
 }
 
 	

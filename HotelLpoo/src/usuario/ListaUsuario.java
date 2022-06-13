@@ -31,4 +31,12 @@ public class ListaUsuario {
         return false;
     }
     
+    @Override
+    public String toString() {
+        String resultado = "";
+        for (Usuario user:this.listaUsuario){
+            resultado = resultado + user.toString();
+        }
+        return resultado;
+    }
 }

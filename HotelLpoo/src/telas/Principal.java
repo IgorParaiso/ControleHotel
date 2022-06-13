@@ -1,9 +1,7 @@
 package telas;
 
-import gravacao.GravarArquivo;
 import usuario.*;
 import Quartos.*;
-import java.io.*;
 
 
 /**
@@ -18,11 +16,6 @@ public class Principal extends javax.swing.JFrame {
     public Principal() {
         initComponents();
         setLocationRelativeTo(null);
-        try {
-            this.salvar = new GravarArquivo("Usuario");
-        } catch (IOException ex) {
-            
-        }
     }
 
     /**
@@ -185,7 +178,6 @@ public class Principal extends javax.swing.JFrame {
     
     private ListaQuarto listaQuarto = new ListaQuarto();
     private ListaUsuario listaUsuario = new ListaUsuario();
-    private GravarArquivo salvar;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botaoAtendimento;
     private javax.swing.JButton botaoCadastrarQuarto;

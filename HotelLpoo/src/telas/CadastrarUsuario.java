@@ -2,6 +2,9 @@ package telas;
 
 import usuario.Usuario;
 import usuario.ListaUsuario;
+import gravacao.GravarArquivo;
+import java.io.IOException;
+
 
 /**
  *
@@ -179,6 +182,16 @@ public class CadastrarUsuario extends javax.swing.JFrame {
             int telefone = Integer.parseInt(this.campoTelefone.getText());
             this.listUser.cadastrar(new Usuario(nome, cpf, dataNasc, telefone, pais, idioma));
             this.dispose();
+            
+            GravarArquivo gravar;
+            try {
+                gravar = new GravarArquivo("usuario.txt");
+                gravar.grava(listUser.toString());
+                gravar.fecha();
+            } catch (IOException e) {
+                this.msgErro.setText("Não foi possível salvar");
+            }
+            
         } catch (NumberFormatException e){
             this.msgErro.setText("TELEFONE DEVE CONTER APENAS NUMEROS");
             this.msgErro.setVisible(true);
