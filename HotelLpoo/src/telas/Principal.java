@@ -43,7 +43,7 @@ public class Principal extends javax.swing.JFrame {
         titulo.setText("Bem Vindo ao Hotel");
 
         botaoCadastrarQuarto.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        botaoCadastrarQuarto.setText("Cadastrar um Usuário Quarto");
+        botaoCadastrarQuarto.setText("Cadastrar um Quarto novo");
         botaoCadastrarQuarto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoCadastrarQuartoActionPerformed(evt);
