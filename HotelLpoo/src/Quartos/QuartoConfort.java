@@ -13,9 +13,9 @@ public class QuartoConfort extends Quarto {
     }
     
     public QuartoConfort (int andar, char identificador, int qntHosp, boolean reservado, Usuario usuario,
-			boolean limpo, boolean check_in, String tipoCama, float valorBase, boolean cafeDaManha,
+			boolean limpo, boolean check_in, String tipoCama, boolean cafeDaManha,
 			String vista, float fatura, boolean hidro){
-        super(andar, identificador, qntHosp, reservado, usuario, limpo, check_in, tipoCama, valorBase, cafeDaManha, vista, fatura);
+        super(andar, identificador, qntHosp, reservado, usuario, limpo, check_in, tipoCama, cafeDaManha, vista, fatura);
 		this.hidro = hidro;
     }
     
@@ -66,18 +66,18 @@ public class QuartoConfort extends Quarto {
     
     @Override
         public String toString(){
-            return "2;" 
-                    + super.getAndar() + ";" 
-                    + super.getIdentificador() + ";" 
-                    + super.getQntHosp() + ";" 
-                    + super.isReservado() + ";" 
-                    + super.getUsuario() + ";" 
-                    + super.isLimpo() + ";" 
-                    + super.isCheck_in() + ";"
-                    + super.getTipoCama() + ";"
-                    + super.isCafeDaManha() + ";" 
-                    + super.getVista() + ";" 
-                    + super.getFatura()+ ";"
+            return "2," 
+                    + super.getAndar() + "," 
+                    + super.getIdentificador() + "," 
+                    + super.getQntHosp() + "," 
+                    + super.isReservado() + "," 
+                    + super.getUsuario() + "," 
+                    + super.isLimpo() + "," 
+                    + super.isCheck_in() + ","
+                    + super.getTipoCama() + ","
+                    + super.isCafeDaManha() + "," 
+                    + super.getVista() + "," 
+                    + super.getFatura()+ ","
                     + this.isHidro() + "\n"; 
         }
 }

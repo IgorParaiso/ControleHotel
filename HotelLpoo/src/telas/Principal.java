@@ -2,6 +2,8 @@ package telas;
 
 import usuario.*;
 import Quartos.*;
+import gravacao.*;
+import java.io.FileNotFoundException;
 
 
 /**
@@ -10,12 +12,34 @@ import Quartos.*;
  */
 public class Principal extends javax.swing.JFrame {
 
+    private void carregar() {
+        LerArquivo ler;
+        try {
+            
+            ler = new LerArquivo("usuario.txt");
+            this.listaUsuario = ler.lerUsuario();
+            ler.fecha();
+            
+            ler = new LerArquivo("quartos.txt");
+            this.listaQuarto = ler.lerQuartos();
+            ler.fecha();
+            
+        } catch (FileNotFoundException ex) {
+            this.botaoAtendimento.setVisible(false);
+            this.botaoCadastrarQuarto.setVisible(false);
+            this.botaoCadastrarUsuario.setVisible(false);
+            this.botaoManutencao.setVisible(false);
+            this.titulo.setText("Base de dados não encontrada!!!");
+        }
+    }
+
     /**
      * Creates new form Principal
      */
     public Principal() {
         initComponents();
         setLocationRelativeTo(null);
+        carregar();
     }
 
     /**
@@ -33,7 +57,6 @@ public class Principal extends javax.swing.JFrame {
         botaoManutencao = new javax.swing.JButton();
         botaoAtendimento = new javax.swing.JButton();
         botaoSair = new javax.swing.JButton();
-        botaoSalvar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -67,6 +90,11 @@ public class Principal extends javax.swing.JFrame {
 
         botaoAtendimento.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         botaoAtendimento.setText("Realizar Atendimento");
+        botaoAtendimento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoAtendimentoActionPerformed(evt);
+            }
+        });
 
         botaoSair.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         botaoSair.setText("Sair");
@@ -76,36 +104,27 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        botaoSalvar.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        botaoSalvar.setText("Salvar Quartos e Usuarios");
-        botaoSalvar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoSalvarActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(74, Short.MAX_VALUE)
+                .addContainerGap(50, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 700, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(titulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(botaoCadastrarUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(botaoAtendimento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(botaoManutencao, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 700, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(botaoCadastrarQuarto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(botaoSalvar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(botaoSair, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGap(74, 74, 74))
+                .addGap(50, 50, 50))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(11, 11, 11)
-                .addComponent(titulo)
+                .addComponent(titulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(botaoCadastrarQuarto, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -115,10 +134,8 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(botaoAtendimento, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(botaoSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
                 .addComponent(botaoSair, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(87, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         pack();
@@ -136,13 +153,13 @@ public class Principal extends javax.swing.JFrame {
         new EscolherTipoQuarto(this.listaQuarto).setVisible(true);
     }//GEN-LAST:event_botaoCadastrarQuartoActionPerformed
 
-    private void botaoSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSalvarActionPerformed
-        
-    }//GEN-LAST:event_botaoSalvarActionPerformed
-
     private void botaoSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSairActionPerformed
         this.dispose();
     }//GEN-LAST:event_botaoSairActionPerformed
+
+    private void botaoAtendimentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoAtendimentoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botaoAtendimentoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -170,7 +187,7 @@ public class Principal extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+       
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -187,7 +204,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton botaoCadastrarUsuario;
     private javax.swing.JButton botaoManutencao;
     private javax.swing.JButton botaoSair;
-    private javax.swing.JButton botaoSalvar;
     private javax.swing.JLabel titulo;
     // End of variables declaration//GEN-END:variables
+
+
 }

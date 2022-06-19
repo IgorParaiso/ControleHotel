@@ -29,7 +29,7 @@ public abstract class Quarto implements Atendimento, Manutencao {
 	}
         
         public Quarto(int andar, char identificador, int qntHosp, boolean reservado, Usuario usuario,
-			boolean limpo, boolean check_in, String tipoCama, float valorBase, boolean cafeDaManha,
+			boolean limpo, boolean check_in, String tipoCama, boolean cafeDaManha,
 			String vista, float fatura){
 		this.andar = andar;
 		this.identificador = identificador;
@@ -39,7 +39,6 @@ public abstract class Quarto implements Atendimento, Manutencao {
 		this.limpo = limpo;
 		this.check_in = check_in;
 		this.tipoCama = tipoCama;
-		this.valorBase = valorBase;
 		this.cafeDaManha = cafeDaManha;
 		this.vista = vista;
 		this.fatura = fatura;

@@ -13,9 +13,9 @@ public class QuartoMaster extends QuartoConfort {
     }
     
     public QuartoMaster (int andar, char identificador, int qntHosp, boolean reservado, Usuario usuario,
-			boolean limpo, boolean check_in, String tipoCama, float valorBase, boolean cafeDaManha,
+			boolean limpo, boolean check_in, String tipoCama, boolean cafeDaManha,
 			String vista, float fatura, boolean hidro, boolean mordomo){
-        super(andar, identificador, qntHosp, reservado, usuario, limpo, check_in, tipoCama, valorBase, cafeDaManha, vista, fatura, hidro);
+        super(andar, identificador, qntHosp, reservado, usuario, limpo, check_in, tipoCama, cafeDaManha, vista, fatura, hidro);
 		this.mordomo = mordomo;
     }
 
@@ -63,19 +63,19 @@ public class QuartoMaster extends QuartoConfort {
     
     @Override
         public String toString(){
-            return "3;" 
-                    + super.getAndar() + ";" 
-                    + super.getIdentificador() + ";" 
-                    + super.getQntHosp() + ";" 
-                    + super.isReservado() + ";" 
-                    + super.getUsuario() + ";" 
-                    + super.isLimpo() + ";" 
-                    + super.isCheck_in() + ";"
-                    + super.getTipoCama() + ";"
-                    + super.isCafeDaManha() + ";" 
-                    + super.getVista() + ";" 
-                    + super.getFatura()+ ";"
-                    + super.isHidro() + ";"
+            return "3," 
+                    + super.getAndar() + "," 
+                    + super.getIdentificador() + "," 
+                    + super.getQntHosp() + "," 
+                    + super.isReservado() + "," 
+                    + super.getUsuario() + "," 
+                    + super.isLimpo() + "," 
+                    + super.isCheck_in() + ","
+                    + super.getTipoCama() + ","
+                    + super.isCafeDaManha() + "," 
+                    + super.getVista() + "," 
+                    + super.getFatura()+ ","
+                    + super.isHidro() + ","
                     + this.isMordomo() + "\n"; 
         }
 }

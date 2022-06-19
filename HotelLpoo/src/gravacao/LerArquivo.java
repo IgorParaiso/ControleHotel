@@ -1,9 +1,9 @@
 package gravacao;
 
+import Quartos.*;
 import java.io.*;
-import java.util.ArrayList;
 import java.util.Scanner;
-import usuario.Usuario;
+import usuario.*;
 
 public class LerArquivo {
     private Scanner entrada;
@@ -16,30 +16,75 @@ public class LerArquivo {
         }
     }
 
-    public ArrayList<Usuario> lerUsuario() throws ArrayIndexOutOfBoundsException, NumberFormatException{
-        ArrayList<Usuario> user = new ArrayList<>();
+    public ListaUsuario lerUsuario() throws ArrayIndexOutOfBoundsException, NumberFormatException{
+        ListaUsuario user = new ListaUsuario();
         String linha;
         
         while (this.entrada.hasNext()){
             linha = this.entrada.nextLine();
-            user.add(separarDados(linha));
+            String[] dados = separarDados(linha);
+            try{
+                int tel = Integer.parseInt(dados[3]);
+                user.cadastrar(new Usuario(dados[0], dados[1], dados[2], tel, dados[4], dados[5]));
+            } catch (NumberFormatException erro){
+                throw new NumberFormatException ("NUMERO DE TELEFONE NAO E INTEIRO");
+            }            
         }
         return user;
     }
     
-    private Usuario separarDados(String linha) throws ArrayIndexOutOfBoundsException, NumberFormatException{
+    public ListaQuarto lerQuartos() throws ArrayIndexOutOfBoundsException, NumberFormatException{
+        ListaQuarto quarto = new ListaQuarto();
+        String linha;
+        
+        while(this.entrada.hasNext()){
+            linha = this.entrada.nextLine();
+            String[] dados = separarDados(linha);
+            try {
+                int tipo = Integer.parseInt(dados[0]);
+                int andar = Integer.parseInt(dados[1]);
+                int qntHosp = Integer.parseInt(dados[3]);
+                float fatura = Float.parseFloat(dados[11]);
+                    
+                boolean reservado = Boolean.parseBoolean(dados[4]);
+                boolean limpo = Boolean.parseBoolean(dados[6]);
+                boolean checkin = Boolean.parseBoolean(dados[7]);
+                boolean cafe = Boolean.parseBoolean(dados[9]);
+                
+                switch (tipo){
+                    case 1 -> quarto.CadastrarSimples(new QuartoSimples(andar, dados[2].charAt(0), qntHosp, reservado, new Usuario(), limpo,
+                                checkin, dados[8],cafe, dados[10], fatura));
+                    case 2 -> {
+                        boolean hidro1 = Boolean.parseBoolean(dados[12]);
+                        quarto.CadastrarConfort(new QuartoConfort(andar, dados[2].charAt(0), qntHosp, reservado, new Usuario(), limpo,
+                                checkin, dados[8],cafe, dados[10], fatura, hidro1));
+                    }
+                    case 3 -> {
+                        boolean hidro2 = Boolean.parseBoolean(dados[12]);
+                        boolean mordomo = Boolean.parseBoolean(dados[13]);
+                        quarto.CadastrarMaster(new QuartoMaster(andar, dados[2].charAt(0), qntHosp, reservado, new Usuario(), limpo,
+                                checkin, dados[8],cafe, dados[10], fatura, hidro2, mordomo));
+                    }
+                }  
+            } catch (NumberFormatException e) {
+                throw new NumberFormatException ("NUMERO DE TELEFONE NAO E INTEIRO");
+            }
+            
+        }
+        return quarto;
+    }
+    
+    private String[] separarDados(String linha) throws ArrayIndexOutOfBoundsException, NumberFormatException{
         String[] dados=null;
-        int num;
         try{
             dados = linha.split(",");
-            num = Integer.parseInt(dados[3]);
-            return (new Usuario(dados[0], dados[1], dados[2], num, dados[4], dados[5]));
+            return dados;
         } catch (ArrayIndexOutOfBoundsException erro){
-			throw new ArrayIndexOutOfBoundsException ("REGISTRO TEM "+dados.length+" INFORMACOES");
-        }catch (NumberFormatException erro){
-                throw new NumberFormatException ("NUMERO DA CONTA NAO E INTEIRO");
+			throw new ArrayIndexOutOfBoundsException ("REGISTRO TEM "+ (dados.length-1) +" INFORMACOES");
         }
     }
+    
+    
     
     public void fecha() throws IllegalStateException{
         try {
