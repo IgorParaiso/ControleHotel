@@ -17,5 +17,25 @@ public class ListaQuarto {
         listaQuarto = new ArrayList<>();
     }
     
+    public void CadastrarSimples (QuartoSimples quarto){
+        this.listaQuarto.add(quarto);
+    }
+    
+    public void CadastrarConfort (QuartoConfort quarto){
+        this.listaQuarto.add(quarto);
+    }
+    
+    public void CadastrarMaster (QuartoMaster quarto){
+        this.listaQuarto.add(quarto);
+    }
+    
+    @Override
+    public String toString(){
+        String resultado = "";
+        for(Quarto room:this.listaQuarto){
+            resultado = resultado + room.toString();
+        }
+        return resultado;
+    }
     
 }

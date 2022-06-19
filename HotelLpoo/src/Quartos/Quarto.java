@@ -14,8 +14,22 @@ public abstract class Quarto implements Atendimento, Manutencao {
 	private String tipoCama, vista;
 	private float valorBase, fatura;
 	
-	public Quarto(int andar, char identificador, int qntHosp, boolean reservado, Usuario usuario,
-			boolean limpo, boolean checkin, String tipoCama, float valorBase, boolean cafeDaManha,
+	public Quarto(int andar, char identificador, int qntHosp, String tipoCama, boolean cafeDaManha,
+			String vista){
+		this.andar = andar;
+		this.identificador = identificador;
+		this.qntHosp = qntHosp;
+		this.reservado = false;
+		this.limpo = true;
+		this.check_in = false;
+		this.tipoCama = tipoCama;
+		this.cafeDaManha = cafeDaManha;
+		this.vista = vista;
+		this.fatura = 0;
+	}
+        
+        public Quarto(int andar, char identificador, int qntHosp, boolean reservado, Usuario usuario,
+			boolean limpo, boolean check_in, String tipoCama, float valorBase, boolean cafeDaManha,
 			String vista, float fatura){
 		this.andar = andar;
 		this.identificador = identificador;
@@ -23,7 +37,7 @@ public abstract class Quarto implements Atendimento, Manutencao {
 		this.reservado = reservado;
 		this.usuario = usuario;
 		this.limpo = limpo;
-		this.check_in = checkin;
+		this.check_in = check_in;
 		this.tipoCama = tipoCama;
 		this.valorBase = valorBase;
 		this.cafeDaManha = cafeDaManha;
@@ -55,29 +69,30 @@ public abstract class Quarto implements Atendimento, Manutencao {
 	public boolean isReservado() {
 		return reservado;
 	}
-	public void setReservado(boolean reservado) {
-		this.reservado = reservado;
+	public void setReservado() {
+            this.reservado = !this.reservado;
+                
 	}
 
 	public boolean isLimpo() {
 		return limpo;
 	}
-	public void setLimpo(boolean limpo) {
-		this.limpo = limpo;
+	public void setLimpo() {
+		this.limpo = !this.limpo;
 	}
 
 	public boolean isCheck_in() {
 		return check_in;
 	}
-	public void setCheck_in(boolean check_in) {
-		this.check_in = check_in;
+	public void setCheck_in() {
+		this.check_in = !this.check_in;
 	}
 
 	public boolean isCafeDaManha() {
 		return cafeDaManha;
 	}
 	public void setCafeDaManha(boolean cafeDaManha) {
-		this.cafeDaManha = cafeDaManha;
+		this.cafeDaManha = !this.cafeDaManha;
 	}
 
 	public Usuario getUsuario() {
@@ -113,5 +128,12 @@ public abstract class Quarto implements Atendimento, Manutencao {
 	}
 	public void setFatura(float fatura) {
 		this.fatura = fatura;
+	}
+        
+        @Override
+        public void limpar(Quarto quarto) {
+		if(!this.isLimpo()){
+                    this.setLimpo();
+                }
 	}
 }

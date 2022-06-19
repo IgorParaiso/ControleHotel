@@ -4,25 +4,30 @@ import usuario.Usuario;
 
 public class QuartoSimples extends Quarto {
     
-    public QuartoSimples(int andar, char identificador, int qntHosp, boolean reservado,
-			Usuario usuario, boolean limpo, boolean checkin, String tipoCama,
-			float valorBase, boolean cafeDaManha, String vista, float fatura) {
-		super(andar, identificador, qntHosp, reservado, usuario, limpo, checkin,
-				tipoCama, valorBase, cafeDaManha, vista, fatura);
+    private static float valorBase = 20;
+    public QuartoSimples(int andar, char identificador, int qntHosp, String tipoCama, boolean cafeDaManha, String vista) {
+        super(andar, identificador, qntHosp, tipoCama, cafeDaManha, vista);
 	}
+    
+    public QuartoSimples(int andar, char identificador, int qntHosp, boolean reservado, Usuario usuario, boolean limpo, 
+            boolean checkin, String tipoCama, int valorBase, boolean cafeDaManha, String vista, int fatura){
+        
+        super(andar, identificador, qntHosp, reservado, usuario, limpo, checkin,tipoCama, valorBase, cafeDaManha, vista, fatura);
+    }
 
 	@Override
 	public void checkin(Quarto quarto) {
 		if (isLimpo() == true && isReservado() == false && isCheck_in() == false){
-			setCheck_in(true);
-			setReservado(true);
-			setLimpo(false);
+			super.setCheck_in();
+			super.setReservado();
+			super.setLimpo();
 		}
 	}
 
 	@Override
-	public void checkout(Quarto quarto) {
-		float valorFinal = getValorBase() + getFatura();
+	public double checkout(Quarto quarto) {
+		double valorFinal = super.getValorBase() + super.getFatura();
+                return valorFinal;
 	}
 
 	@Override
@@ -38,20 +43,30 @@ public class QuartoSimples extends Quarto {
 	}
 
 	@Override
-	public void limpar(Quarto quarto) {
-		float valor = 5;
-	}
-
-	@Override
 	public void TrocarChuveiro(Quarto quarto) {
-		float valor = 50;
-		if(isCheck_in() == true){
-			
+		if(isCheck_in()){
+                    super.setFatura(super.getFatura() + 50);
 		}
 	}
 
 	@Override
 	public void AbastecerToalha(Quarto quarto) {
-		float valor = 20;
+		super.setFatura(super.getFatura() + 20);
 	}
+        
+        @Override
+        public String toString(){
+            return "1;" 
+                    + super.getAndar() + ";" 
+                    + super.getIdentificador() + ";" 
+                    + super.getQntHosp() + ";" 
+                    + super.isReservado() + ";" 
+                    + super.getUsuario() + ";" 
+                    + super.isLimpo() + ";" 
+                    + super.isCheck_in() + ";"
+                    + super.getTipoCama() + ";"
+                    + super.isCafeDaManha() + ";" 
+                    + super.getVista() + ";" 
+                    + super.getFatura()+ "\n"; 
+        }
 }
