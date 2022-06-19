@@ -59,7 +59,7 @@
                       <Component id="msgErro" min="-2" pref="394" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="9" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -127,9 +127,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="campoNome">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campoNomeActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="tituloCPF">
       <Properties>

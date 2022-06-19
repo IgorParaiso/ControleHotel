@@ -4,6 +4,10 @@ public class Usuario {
 	private String nome, cpf, dataNasc, paisOrigem, idiomaAtend;
 	private int telefone;
 	
+        public Usuario(){
+            
+        }
+        
 	public Usuario (String nome, String cpf, String dataNasc, int telefone, String paisOrigem, String idiomaAtend) {
 		this.nome = nome;
 		this.cpf = cpf;

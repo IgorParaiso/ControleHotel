@@ -23,13 +23,206 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="400" max="32767" attributes="0"/>
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="BotaoVoltar" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="labelAndar" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelIdentificador" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelQntHosp" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelTipoCama" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelCafeManha" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelVista" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelHidro" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelMordomo" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="9" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="campoVista" pref="85" max="32767" attributes="0"/>
+                          <Component id="CampoTipoCama" max="32767" attributes="0"/>
+                          <Component id="campoQntHosp" max="32767" attributes="0"/>
+                          <Component id="campoIdentificador" max="32767" attributes="0"/>
+                          <Component id="campoAndar" max="32767" attributes="0"/>
+                          <Component id="escolheCafe" min="-2" max="-2" attributes="0"/>
+                          <Component id="escolheHidro" min="-2" max="-2" attributes="0"/>
+                          <Component id="escolheMordomo" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+              <Component id="msgErro" min="-2" pref="68" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              <Component id="BotaoSalvar" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="166" max="-2" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="300" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="BotaoVoltar" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="labelAndar" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="campoAndar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="labelIdentificador" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="campoIdentificador" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="labelQntHosp" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="campoQntHosp" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="3" pref="3" max="-2" attributes="0"/>
+                      <Component id="msgErro" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="labelTipoCama" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="CampoTipoCama" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="labelCafeManha" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="escolheCafe" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="labelVista" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="campoVista" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="labelHidro" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="escolheHidro" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="labelMordomo" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="escolheMordomo" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="BotaoSalvar" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
   </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JButton" name="BotaoVoltar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Voltar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotaoVoltarActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="BotaoSalvar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Salvar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotaoSalvarActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelAndar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Andar"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelIdentificador">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Letra do Quarto"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelQntHosp">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Quantidade de Hospedes"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelTipoCama">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Tipo de Cama"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelCafeManha">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Cafe da manha"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelVista">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Vista do Quarto"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelHidro">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Quarto tem Hidro"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelMordomo">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Mordomo disponivel"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="campoAndar">
+    </Component>
+    <Component class="javax.swing.JTextField" name="campoIdentificador">
+    </Component>
+    <Component class="javax.swing.JTextField" name="campoQntHosp">
+    </Component>
+    <Component class="javax.swing.JTextField" name="CampoTipoCama">
+    </Component>
+    <Component class="javax.swing.JTextField" name="campoVista">
+    </Component>
+    <Component class="javax.swing.JComboBox" name="escolheCafe">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;Sim&quot;, &quot;N&#xe3;o&quot;})" type="code"/>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="escolheHidro">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;Sim&quot;, &quot;N&#xe3;o&quot;})" type="code"/>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="escolheMordomo">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;Sim&quot;, &quot;N&#xe3;o&quot;})" type="code"/>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="msgErro">
+    </Component>
+  </SubComponents>
 </Form>

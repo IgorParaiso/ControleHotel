@@ -57,12 +57,6 @@ public class CadastrarUsuario extends javax.swing.JFrame {
         tituloNome.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         tituloNome.setText("Nome");
 
-        campoNome.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campoNomeActionPerformed(evt);
-            }
-        });
-
         tituloCPF.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         tituloCPF.setText("CPF");
 
@@ -125,7 +119,7 @@ public class CadastrarUsuario extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(209, 209, 209)
                         .addComponent(msgErro, javax.swing.GroupLayout.PREFERRED_SIZE, 394, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(9, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -168,10 +162,6 @@ public class CadastrarUsuario extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void campoNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoNomeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_campoNomeActionPerformed
-
     private void botaoSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSalvarActionPerformed
         String nome = this.campoNome.getText();
         String cpf = this.campoCPF.getText();
@@ -181,15 +171,17 @@ public class CadastrarUsuario extends javax.swing.JFrame {
         try {
             int telefone = Integer.parseInt(this.campoTelefone.getText());
             this.listUser.cadastrar(new Usuario(nome, cpf, dataNasc, telefone, pais, idioma));
-            this.dispose();
+            
             
             GravarArquivo gravar;
             try {
                 gravar = new GravarArquivo("usuario.txt");
                 gravar.grava(listUser.toString());
                 gravar.fecha();
+                this.dispose();
             } catch (IOException e) {
                 this.msgErro.setText("Não foi possível salvar");
+                this.msgErro.setVisible(true);
             }
             
         } catch (NumberFormatException e){
