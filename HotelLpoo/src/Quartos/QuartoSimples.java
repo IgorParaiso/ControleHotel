@@ -43,15 +43,17 @@ public class QuartoSimples extends Quarto {
 	}
 
 	@Override
-	public void TrocarChuveiro(Quarto quarto) {
-		if(isCheck_in()){
+	public void TrocarChuveiro() {
+		if(super.isCheck_in()){
                     super.setFatura(super.getFatura() + 50);
 		}
 	}
 
 	@Override
-	public void AbastecerToalha(Quarto quarto) {
-		super.setFatura(super.getFatura() + 20);
+	public void AbastecerToalha() {
+            if(super.isCheck_in()){
+                super.setFatura(super.getFatura() + 20);
+            }
 	}
         
         @Override

@@ -1,7 +1,7 @@
 package Quartos;
 
 public interface Manutencao {
-	public void limpar(Quarto quarto);
-	public void TrocarChuveiro (Quarto quarto);
-	public void AbastecerToalha (Quarto quarto);
+	public void limpar();
+	public void TrocarChuveiro ();
+	public void AbastecerToalha ();
 }

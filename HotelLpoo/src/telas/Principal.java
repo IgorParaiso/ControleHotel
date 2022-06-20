@@ -146,7 +146,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoCadastrarUsuarioActionPerformed
 
     private void botaoManutencaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoManutencaoActionPerformed
-        
+        new PainelManutencao(this.listaQuarto).setVisible(true);
     }//GEN-LAST:event_botaoManutencaoActionPerformed
 
     private void botaoCadastrarQuartoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrarQuartoActionPerformed

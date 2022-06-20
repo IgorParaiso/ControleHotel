@@ -4,6 +4,8 @@
  */
 package telas;
 
+import Quartos.*;
+
 /**
  *
  * @author Igor Paraiso
@@ -12,9 +14,12 @@ public class PainelManutencao extends javax.swing.JFrame {
 
     /**
      * Creates new form PainelManutencao
+     * @param quarto
      */
-    public PainelManutencao() {
+    public PainelManutencao(ListaQuarto quarto) {
         initComponents();
+        setLocationRelativeTo(null);
+        this.quarto = quarto;
     }
 
     /**
@@ -26,26 +31,157 @@ public class PainelManutencao extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        titulo = new javax.swing.JLabel();
+        botaoLimpeza = new javax.swing.JToggleButton();
+        botaoTrocarChuveiro = new javax.swing.JToggleButton();
+        botaoAbastecerToalha = new javax.swing.JToggleButton();
+        botaoServico = new javax.swing.JToggleButton();
+        botaoLimparHidro = new javax.swing.JToggleButton();
+        botaoMordomo = new javax.swing.JToggleButton();
+        botaoVoltar = new javax.swing.JToggleButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        titulo.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        titulo.setText("Painel Manutenção");
+
+        botaoLimpeza.setText("Chamar a limpeza");
+        botaoLimpeza.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoLimpezaActionPerformed(evt);
+            }
+        });
+
+        botaoTrocarChuveiro.setText("Solicitar troca de chuveiro");
+        botaoTrocarChuveiro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoTrocarChuveiroActionPerformed(evt);
+            }
+        });
+
+        botaoAbastecerToalha.setText("Abastecer toalhas");
+        botaoAbastecerToalha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoAbastecerToalhaActionPerformed(evt);
+            }
+        });
+
+        botaoServico.setText("Charmar Serviço de Quarto");
+        botaoServico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoServicoActionPerformed(evt);
+            }
+        });
+
+        botaoLimparHidro.setText("Limpar hidromassagem");
+        botaoLimparHidro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoLimparHidroActionPerformed(evt);
+            }
+        });
+
+        botaoMordomo.setText("Chamar Mordomo");
+        botaoMordomo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoMordomoActionPerformed(evt);
+            }
+        });
+
+        botaoVoltar.setText("Voltar");
+        botaoVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoVoltarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(botaoVoltar)
+                        .addGap(10, 10, 10)
+                        .addComponent(titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(39, 39, 39)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(botaoMordomo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(botaoLimparHidro, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(botaoLimpeza, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(botaoTrocarChuveiro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(botaoAbastecerToalha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(botaoServico, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botaoVoltar))
+                .addGap(18, 18, 18)
+                .addComponent(botaoLimpeza)
+                .addGap(18, 18, 18)
+                .addComponent(botaoTrocarChuveiro)
+                .addGap(18, 18, 18)
+                .addComponent(botaoAbastecerToalha)
+                .addGap(18, 18, 18)
+                .addComponent(botaoServico)
+                .addGap(18, 18, 18)
+                .addComponent(botaoLimparHidro)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                .addComponent(botaoMordomo)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void botaoVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltarActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_botaoVoltarActionPerformed
+
+    private void botaoLimpezaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoLimpezaActionPerformed
+        new escolherQuartoManu(this.quarto, 1).setVisible(true);
+    }//GEN-LAST:event_botaoLimpezaActionPerformed
+
+    private void botaoTrocarChuveiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoTrocarChuveiroActionPerformed
+        new escolherQuartoManu(this.quarto, 2).setVisible(true);
+    }//GEN-LAST:event_botaoTrocarChuveiroActionPerformed
+
+    private void botaoAbastecerToalhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoAbastecerToalhaActionPerformed
+        new escolherQuartoManu(this.quarto, 3).setVisible(true);
+    }//GEN-LAST:event_botaoAbastecerToalhaActionPerformed
+
+    private void botaoServicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoServicoActionPerformed
+        new escolherQuartoManu(this.quarto, 4).setVisible(true);
+    }//GEN-LAST:event_botaoServicoActionPerformed
+
+    private void botaoLimparHidroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoLimparHidroActionPerformed
+        new escolherQuartoManu(this.quarto, 5).setVisible(true);
+    }//GEN-LAST:event_botaoLimparHidroActionPerformed
+
+    private void botaoMordomoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoMordomoActionPerformed
+        new escolherQuartoManu(this.quarto, 6).setVisible(true);
+    }//GEN-LAST:event_botaoMordomoActionPerformed
     /**
      * @param args the command line arguments
      */
 
+    private ListaQuarto quarto;
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton botaoAbastecerToalha;
+    private javax.swing.JToggleButton botaoLimparHidro;
+    private javax.swing.JToggleButton botaoLimpeza;
+    private javax.swing.JToggleButton botaoMordomo;
+    private javax.swing.JToggleButton botaoServico;
+    private javax.swing.JToggleButton botaoTrocarChuveiro;
+    private javax.swing.JToggleButton botaoVoltar;
+    private javax.swing.JLabel titulo;
     // End of variables declaration//GEN-END:variables
 }

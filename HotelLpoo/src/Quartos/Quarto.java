@@ -130,7 +130,7 @@ public abstract class Quarto implements Atendimento, Manutencao {
 	}
         
         @Override
-        public void limpar(Quarto quarto) {
+        public void limpar() {
 		if(!this.isLimpo()){
                     this.setLimpo();
                 }

@@ -27,6 +27,10 @@ public class QuartoMaster extends QuartoConfort {
         this.mordomo = mordomo;
     }
     
+    public void chamarMordomo(){
+        
+    }
+    
      @Override
     public void checkin(Quarto quarto) {
     	// TODO Auto-generated method stub
@@ -50,15 +54,17 @@ public class QuartoMaster extends QuartoConfort {
     }
 
     @Override
-    public void TrocarChuveiro(Quarto quarto) {
+    public void TrocarChuveiro() {
 	if (super.isCheck_in()){
         super.setFatura(super.getFatura() + 200);
         }
     }
 
     @Override
-    public void AbastecerToalha(Quarto quarto) {
-	super.setFatura(super.getFatura() + 80);
+    public void AbastecerToalha() {
+	if (super.isCheck_in()){
+            super.setFatura(super.getFatura() + 80);
+        }
     }
     
     @Override

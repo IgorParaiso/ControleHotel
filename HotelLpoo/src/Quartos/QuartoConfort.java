@@ -26,6 +26,14 @@ public class QuartoConfort extends Quarto {
     public void setHidro(boolean hidro) {
         this.hidro = hidro;
     }
+    
+    public void limparHidro(){
+        
+    }
+    
+    public void chamarServico(){
+        
+    }
 
     @Override
     public void checkin(Quarto quarto) {
@@ -53,15 +61,17 @@ public class QuartoConfort extends Quarto {
     }
 
     @Override
-    public void TrocarChuveiro(Quarto quarto) {
+    public void TrocarChuveiro() {
 	if (super.isCheck_in()){
-        super.setFatura(super.getFatura() + 100);
+            super.setFatura(super.getFatura() + 100);
         }
     }
 
     @Override
-    public void AbastecerToalha(Quarto quarto) {
-	super.setFatura(super.getFatura() + 40);
+    public void AbastecerToalha() {
+	if (super.isCheck_in()){
+            super.setFatura(super.getFatura() + 40);
+        }
     }
     
     @Override

@@ -29,6 +29,19 @@ public class ListaQuarto {
         this.listaQuarto.add(quarto);
     }
     
+    public String[] quartoNums(){
+        String[] resultado = new String[this.listaQuarto.size()];
+        for(int i = 0; i<this.listaQuarto.size(); i++){
+            resultado[i] = String.valueOf(this.listaQuarto.get(i).getAndar()) + this.listaQuarto.get(i).getIdentificador();
+        }
+        return resultado;
+        
+    }
+    
+    public Quarto getQuarto(int index){
+        return this.listaQuarto.get(index);
+    }
+    
     @Override
     public String toString(){
         String resultado = "";
