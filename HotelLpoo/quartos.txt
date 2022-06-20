@@ -1,7 +1,10 @@
 1,1,A,2,true,Joao,11111111111,12/08/1994,123456789,Brasil,Portugues,false,true,123456789,false,Portugues,0.0
 1,1,B,1,true,Joao,11111111111,12/08/1994,123456789,Brasil,Portugues,true,false,123456789,false,Portugues,0.0
-2,2,A,2,false,null,null,null,-1,null,null,false,false,999999999,false,Ingles,0.0,false
+2,2,A,2,true,Joao,11111111111,12/08/1994,123456789,Brasil,Portugues,false,false,-1,false,null,0.0,false
 2,2,C,4,true,Maria,22222222222,12121212,999999999,Brasil,Ingles,true,false,999999999,true,Ingles,0.0,true
 3,3,A,2,false,null,null,null,-1,null,null,false,false,-1,false,null,0.0,false,false
 3,3,B,4,false,null,null,null,-1,null,null,false,false,-1,true,null,0.0,false,false
 1,1,C,1,true,Joao,11111111111,12/08/1994,123456789,Brasil,Portugues,false,true,123456789,false,Portugues,0.0
+1,1,F,4,false,null,null,null,-1,null,null,true,false,-1,true,null,0.0
+2,2,Z,2,false,null,null,null,-1,null,null,true,false,-1,false,null,0.0,false
+3,3,U,1,false,null,null,null,-1,null,null,true,false,-1,false,null,0.0,false,false

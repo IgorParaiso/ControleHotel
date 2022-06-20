@@ -1,19 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package telas;
 
 import Quartos.*;
 import gravacao.GravarArquivo;
 import java.io.*;
 
-
-/**
- *
- * @author aluno.laboratorio
- */
 public class CriarQuarto extends javax.swing.JFrame {
 
     /**
