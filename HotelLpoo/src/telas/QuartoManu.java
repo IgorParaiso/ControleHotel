@@ -1,14 +1,22 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ */
 package telas;
 
 import Quartos.*;
 import javax.swing.DefaultComboBoxModel;
 
-public class EscolherQuartoManu extends javax.swing.JFrame {
+/**
+ *
+ * @author Igor Paraiso
+ */
+public class QuartoManu extends javax.swing.JFrame {
 
     /**
-     * Creates new form EscolherQuartoManu
+     * Creates new form escolherQuarto
      */
-    public EscolherQuartoManu(ListaQuarto quarto, int idServico) {
+    public QuartoManu(ListaQuarto quarto, int idServico) {
         this.quarto = quarto;
         initComponents();
         setLocationRelativeTo(null);
@@ -33,6 +41,8 @@ public class EscolherQuartoManu extends javax.swing.JFrame {
                 this.tituloServico.setText("Escolha o quarto que precisa de atendimento do Mordomo");
                 break;
         }
+        
+        
     }
 
     /**
@@ -44,25 +54,25 @@ public class EscolherQuartoManu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        botaoVoltar = new javax.swing.JButton();
         tituloServico = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        msgErro = new javax.swing.JLabel();
+        botaoAcao = new javax.swing.JToggleButton();
+        botaoVoltar = new javax.swing.JToggleButton();
         escolherQuarto = new javax.swing.JComboBox<>();
+        msgErro = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        botaoAcao.setText("Solicitar");
+        botaoAcao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoAcaoActionPerformed(evt);
+            }
+        });
 
         botaoVoltar.setText("Voltar");
         botaoVoltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoVoltarActionPerformed(evt);
-            }
-        });
-
-        jButton1.setText("Solicitar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
             }
         });
 
@@ -73,41 +83,44 @@ public class EscolherQuartoManu extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(botaoVoltar)
+                .addGap(75, 75, 75)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(botaoVoltar))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(129, 129, 129)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton1)
-                            .addComponent(escolherQuarto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tituloServico, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(112, 112, 112)
-                        .addComponent(msgErro, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(44, Short.MAX_VALUE))
+                    .addComponent(escolherQuarto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(botaoAcao, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tituloServico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(msgErro, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(130, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(botaoVoltar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tituloServico, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addComponent(tituloServico, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(botaoVoltar)))
+                .addGap(41, 41, 41)
                 .addComponent(escolherQuarto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(54, 54, 54)
-                .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
-                .addComponent(msgErro, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
+                .addComponent(botaoAcao)
+                .addGap(34, 34, 34)
+                .addComponent(msgErro, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void botaoVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltarActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_botaoVoltarActionPerformed
+
+    private void botaoAcaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoAcaoActionPerformed
         int numQ = this.escolherQuarto.getSelectedIndex();
         
         switch(this.idServico){
@@ -148,23 +161,19 @@ public class EscolherQuartoManu extends javax.swing.JFrame {
                     this.msgErro.setText("Esse serviço não está disponível para esse quarto");
                 }
                 break;
-            }
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void botaoVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltarActionPerformed
-        this.dispose();
-    }//GEN-LAST:event_botaoVoltarActionPerformed
+        }
+    }//GEN-LAST:event_botaoAcaoActionPerformed
 
     /**
      * @param args the command line arguments
      */
     
+    private ListaQuarto quarto;
     private int idServico;
-    private ListaQuarto quarto;    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botaoVoltar;
+    private javax.swing.JToggleButton botaoAcao;
+    private javax.swing.JToggleButton botaoVoltar;
     private javax.swing.JComboBox<String> escolherQuarto;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel msgErro;
     private javax.swing.JLabel tituloServico;
     // End of variables declaration//GEN-END:variables

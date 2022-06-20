@@ -139,27 +139,27 @@ public class PainelManutencao extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoVoltarActionPerformed
 
     private void botaoLimpezaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoLimpezaActionPerformed
-        new EscolherQuartoManu(this.quarto, 1).setVisible(true);
+        new QuartoManu(this.quarto, 1).setVisible(true);
     }//GEN-LAST:event_botaoLimpezaActionPerformed
 
     private void botaoTrocarChuveiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoTrocarChuveiroActionPerformed
-        new EscolherQuartoManu(this.quarto, 2).setVisible(true);
+        new QuartoManu(this.quarto, 2).setVisible(true);
     }//GEN-LAST:event_botaoTrocarChuveiroActionPerformed
 
     private void botaoAbastecerToalhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoAbastecerToalhaActionPerformed
-        new EscolherQuartoManu(this.quarto, 3).setVisible(true);
+        new QuartoManu(this.quarto, 3).setVisible(true);
     }//GEN-LAST:event_botaoAbastecerToalhaActionPerformed
 
     private void botaoServicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoServicoActionPerformed
-        new EscolherQuartoManu(this.quarto, 4).setVisible(true);
+        new QuartoManu(this.quarto, 4).setVisible(true);
     }//GEN-LAST:event_botaoServicoActionPerformed
 
     private void botaoLimparHidroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoLimparHidroActionPerformed
-        new EscolherQuartoManu(this.quarto, 5).setVisible(true);
+        new QuartoManu(this.quarto, 5).setVisible(true);
     }//GEN-LAST:event_botaoLimparHidroActionPerformed
 
     private void botaoMordomoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoMordomoActionPerformed
-        new EscolherQuartoManu(this.quarto, 6).setVisible(true);
+        new QuartoManu(this.quarto, 6).setVisible(true);
     }//GEN-LAST:event_botaoMordomoActionPerformed
     /**
      * @param args the command line arguments
