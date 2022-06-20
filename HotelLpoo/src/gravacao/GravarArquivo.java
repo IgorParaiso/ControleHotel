@@ -8,7 +8,7 @@ public class GravarArquivo {
     
     public GravarArquivo (String nome) throws IOException{
         try {
-            writer = new FileWriter(new File(nome), true);
+            writer = new FileWriter(new File(nome), false);
             
             saida = new PrintWriter(writer);
         } catch (IOException e) {

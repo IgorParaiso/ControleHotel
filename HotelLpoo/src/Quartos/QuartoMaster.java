@@ -12,10 +12,10 @@ public class QuartoMaster extends QuartoConfort {
 	this.mordomo = mordomo;
     }
     
-    public QuartoMaster (int andar, char identificador, int qntHosp, boolean reservado, Usuario usuario,
+    public QuartoMaster (int andar, char identificador, int qntHosp, boolean reservado, String nome, String cpf, String dataNasc, int telefone, String paisOrigem, String idiomaAtend,
 			boolean limpo, boolean check_in, String tipoCama, boolean cafeDaManha,
 			String vista, float fatura, boolean hidro, boolean mordomo){
-        super(andar, identificador, qntHosp, reservado, usuario, limpo, check_in, tipoCama, cafeDaManha, vista, fatura, hidro);
+        super(andar, identificador, qntHosp, reservado, nome, cpf, dataNasc, telefone, paisOrigem, idiomaAtend, limpo, check_in, tipoCama, cafeDaManha, vista, fatura, hidro);
 		this.mordomo = mordomo;
     }
 
@@ -28,29 +28,7 @@ public class QuartoMaster extends QuartoConfort {
     }
     
     public void chamarMordomo(){
-        
-    }
-    
-     @Override
-    public void checkin(Quarto quarto) {
-    	// TODO Auto-generated method stub
-    }
-
-    @Override
-    public double checkout(Quarto quarto) {
-	// TODO Auto-generated method stub
-        return 0;
-    }
-
-    @Override
-    public String ConsultarDisponiveis(ListaQuarto listaQuartos) {
-	// TODO Auto-generated method stub
-        return "";
-    }
-
-    @Override
-    public void fazerReserva(Quarto quartos) {
-        // TODO Auto-generated method stub
+        super.setFatura(super.getFatura() + 200);
     }
 
     @Override
@@ -68,20 +46,20 @@ public class QuartoMaster extends QuartoConfort {
     }
     
     @Override
-        public String toString(){
-            return "3," 
-                    + super.getAndar() + "," 
-                    + super.getIdentificador() + "," 
-                    + super.getQntHosp() + "," 
-                    + super.isReservado() + "," 
-                    + super.getUsuario() + "," 
-                    + super.isLimpo() + "," 
-                    + super.isCheck_in() + ","
-                    + super.getTipoCama() + ","
-                    + super.isCafeDaManha() + "," 
-                    + super.getVista() + "," 
-                    + super.getFatura()+ ","
-                    + super.isHidro() + ","
-                    + this.isMordomo() + "\n"; 
+    public String toString(){
+        return "3," 
+            + super.getAndar() + "," 
+            + super.getIdentificador() + "," 
+            + super.getQntHosp() + "," 
+            + super.isReservado() + "," 
+            + super.getUsuario() + "," 
+            + super.isLimpo() + "," 
+            + super.isCheck_in() + ","
+            + super.getTipoCama() + ","
+            + super.isCafeDaManha() + "," 
+            + super.getVista() + "," 
+            + super.getFatura()+ ","
+            + super.isHidro() + ","
+            + this.isMordomo(); 
         }
 }

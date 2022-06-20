@@ -31,11 +31,19 @@ public class ListaUsuario {
         return false;
     }
     
+    public String[] nomeUser(){
+        String[] resultado = new String[this.listaUsuario.size()];
+        for(int i = 0; i<this.listaUsuario.size(); i++){
+            resultado[i] = this.listaUsuario.get(i).getNome();
+        }
+        return resultado;
+    }
+    
     @Override
     public String toString() {
         String resultado = "";
         for (Usuario user:this.listaUsuario){
-            resultado = resultado + user.toString();
+            resultado = resultado + user.toString() + "\n";
         }
         return resultado;
     }

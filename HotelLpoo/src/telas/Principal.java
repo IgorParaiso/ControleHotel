@@ -37,9 +37,10 @@ public class Principal extends javax.swing.JFrame {
      * Creates new form Principal
      */
     public Principal() {
+        carregar();
         initComponents();
         setLocationRelativeTo(null);
-        carregar();
+        
     }
 
     /**
@@ -65,7 +66,7 @@ public class Principal extends javax.swing.JFrame {
         titulo.setText("Bem Vindo ao Hotel");
 
         botaoCadastrarQuarto.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        botaoCadastrarQuarto.setText("Cadastrar um Quarto novo");
+        botaoCadastrarQuarto.setText("Cadastrar um Quarto");
         botaoCadastrarQuarto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoCadastrarQuartoActionPerformed(evt);
@@ -73,7 +74,7 @@ public class Principal extends javax.swing.JFrame {
         });
 
         botaoCadastrarUsuario.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        botaoCadastrarUsuario.setText("Cadastrar um Usuário novo");
+        botaoCadastrarUsuario.setText("Cadastrar um Usuário");
         botaoCadastrarUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoCadastrarUsuarioActionPerformed(evt);
@@ -115,7 +116,7 @@ public class Principal extends javax.swing.JFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(botaoCadastrarUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(botaoAtendimento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(botaoManutencao, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 700, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(botaoManutencao, javax.swing.GroupLayout.PREFERRED_SIZE, 700, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(botaoCadastrarQuarto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(botaoSair, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGap(50, 50, 50))
@@ -126,16 +127,16 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(11, 11, 11)
                 .addComponent(titulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addComponent(botaoCadastrarQuarto, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
                 .addComponent(botaoCadastrarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(botaoCadastrarQuarto, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(botaoManutencao, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(botaoAtendimento, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(botaoSair, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         pack();
@@ -146,6 +147,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoCadastrarUsuarioActionPerformed
 
     private void botaoManutencaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoManutencaoActionPerformed
+        carregar();
         new PainelManutencao(this.listaQuarto).setVisible(true);
     }//GEN-LAST:event_botaoManutencaoActionPerformed
 
@@ -158,7 +160,8 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoSairActionPerformed
 
     private void botaoAtendimentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoAtendimentoActionPerformed
-        // TODO add your handling code here:
+        carregar();
+        new PainelAtendimento(this.listaUsuario, this.listaQuarto).setVisible(true);
     }//GEN-LAST:event_botaoAtendimentoActionPerformed
 
     /**

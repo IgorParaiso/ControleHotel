@@ -12,10 +12,10 @@ public class QuartoConfort extends Quarto {
 		this.hidro = hidro;
     }
     
-    public QuartoConfort (int andar, char identificador, int qntHosp, boolean reservado, Usuario usuario,
+    public QuartoConfort (int andar, char identificador, int qntHosp, boolean reservado, String nome, String cpf, String dataNasc, int telefone, String paisOrigem, String idiomaAtend,
 			boolean limpo, boolean check_in, String tipoCama, boolean cafeDaManha,
 			String vista, float fatura, boolean hidro){
-        super(andar, identificador, qntHosp, reservado, usuario, limpo, check_in, tipoCama, cafeDaManha, vista, fatura);
+        super(andar, identificador, qntHosp, reservado, nome, cpf, dataNasc, telefone, paisOrigem, idiomaAtend, limpo, check_in, tipoCama, cafeDaManha, vista, fatura);
 		this.hidro = hidro;
     }
     
@@ -28,36 +28,11 @@ public class QuartoConfort extends Quarto {
     }
     
     public void limparHidro(){
-        
+        super.setFatura(super.getFatura() + 40);
     }
     
     public void chamarServico(){
-        
-    }
-
-    @Override
-    public void checkin(Quarto quarto) {
-    	/*if (get.limpar() && get.fazerReserva(usuario.Usuario) && checkin == false){
-            checkin = true;
-	}
-	return false;*/
-    }
-
-    @Override
-    public double checkout(Quarto quarto) {
-	// TODO Auto-generated method stub
-        return 0;
-    }
-
-    @Override
-    public String ConsultarDisponiveis(ListaQuarto listaQuartos) {
-	// TODO Auto-generated method stub
-        return "";
-    }
-
-    @Override
-    public void fazerReserva(Quarto quartos) {
-        // TODO Auto-generated method stub
+        super.setFatura(super.getFatura() + 50);
     }
 
     @Override
@@ -75,19 +50,19 @@ public class QuartoConfort extends Quarto {
     }
     
     @Override
-        public String toString(){
-            return "2," 
-                    + super.getAndar() + "," 
-                    + super.getIdentificador() + "," 
-                    + super.getQntHosp() + "," 
-                    + super.isReservado() + "," 
-                    + super.getUsuario() + "," 
-                    + super.isLimpo() + "," 
-                    + super.isCheck_in() + ","
-                    + super.getTipoCama() + ","
-                    + super.isCafeDaManha() + "," 
-                    + super.getVista() + "," 
-                    + super.getFatura()+ ","
-                    + this.isHidro() + "\n"; 
+    public String toString(){
+        return "2," 
+            + super.getAndar() + "," 
+            + super.getIdentificador() + "," 
+            + super.getQntHosp() + "," 
+            + super.isReservado() + "," 
+            + super.getUsuario() + "," 
+            + super.isLimpo() + "," 
+            + super.isCheck_in() + ","
+            + super.getTipoCama() + ","
+            + super.isCafeDaManha() + "," 
+            + super.getVista() + "," 
+            + super.getFatura()+ ","
+            + this.isHidro(); 
         }
 }

@@ -30,7 +30,7 @@
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="botaoCadastrarUsuario" alignment="0" max="32767" attributes="0"/>
                       <Component id="botaoAtendimento" alignment="0" max="32767" attributes="0"/>
-                      <Component id="botaoManutencao" alignment="1" min="-2" pref="700" max="-2" attributes="0"/>
+                      <Component id="botaoManutencao" alignment="0" min="-2" pref="700" max="-2" attributes="0"/>
                       <Component id="botaoCadastrarQuarto" alignment="1" max="32767" attributes="0"/>
                       <Component id="botaoSair" alignment="0" max="32767" attributes="0"/>
                   </Group>
@@ -45,16 +45,16 @@
               <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
               <Component id="titulo" max="32767" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="botaoCadastrarQuarto" min="-2" pref="47" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="botaoCadastrarUsuario" min="-2" pref="47" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="botaoCadastrarQuarto" min="-2" pref="47" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="botaoManutencao" min="-2" pref="47" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="botaoAtendimento" min="-2" pref="47" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="botaoSair" min="-2" pref="47" max="-2" attributes="0"/>
-              <EmptySpace pref="30" max="32767" attributes="0"/>
+              <EmptySpace pref="15" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -74,7 +74,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="36" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Cadastrar um Quarto novo"/>
+        <Property name="text" type="java.lang.String" value="Cadastrar um Quarto"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoCadastrarQuartoActionPerformed"/>
@@ -85,7 +85,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="36" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Cadastrar um Usu&#xe1;rio novo"/>
+        <Property name="text" type="java.lang.String" value="Cadastrar um Usu&#xe1;rio"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoCadastrarUsuarioActionPerformed"/>

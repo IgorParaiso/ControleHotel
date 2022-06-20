@@ -23,12 +23,39 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="botaoVoltar" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-              <Component id="jLabel1" min="-2" pref="263" max="-2" attributes="0"/>
-              <EmptySpace pref="25" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="botaoVoltar" max="32767" attributes="0"/>
+                  <Component id="msgErro" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="titulo" min="-2" pref="412" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="labelUsuario" alignment="0" pref="125" max="32767" attributes="0"/>
+                          <Component id="labelReservado" max="32767" attributes="0"/>
+                          <Component id="labelOcupados" alignment="0" max="32767" attributes="0"/>
+                          <Component id="labelDisponiveis" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="selectDisponiveis" pref="92" max="32767" attributes="0"/>
+                          <Component id="selectOcupado" max="32767" attributes="0"/>
+                          <Component id="selectReservado" max="32767" attributes="0"/>
+                          <Component id="selectUsuario" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="botaoCheckOut" max="32767" attributes="0"/>
+                          <Component id="botaoCheckIn" max="32767" attributes="0"/>
+                          <Component id="checkReserva" alignment="0" pref="159" max="32767" attributes="0"/>
+                          <Component id="botaoReserva" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace pref="30" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -36,25 +63,48 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="jLabel1" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="botaoVoltar" min="-2" max="-2" attributes="0"/>
+                  <Component id="titulo" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="262" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="labelDisponiveis" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="selectDisponiveis" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="botaoCheckIn" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="msgErro" alignment="3" min="-2" pref="43" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="labelOcupados" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="selectOcupado" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="botaoCheckOut" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="labelReservado" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="selectReservado" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="botaoReserva" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="labelUsuario" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="selectUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="checkReserva" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JToggleButton" name="botaoVoltar">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Voltar"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoVoltarActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel1">
+    <Component class="javax.swing.JLabel" name="titulo">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="24" style="0"/>
@@ -62,6 +112,105 @@
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="Bem vindo ao painel de atendimento"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="botaoVoltar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Voltar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoVoltarActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="botaoCheckIn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Fazer Check-in"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoCheckInActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="botaoCheckOut">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Fazer Check-out"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoCheckOutActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="botaoReserva">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Reservar um quarto"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoReservaActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelDisponiveis">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="QuartosDisponiveis"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="selectDisponiveis">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="new DefaultComboBoxModel(this.quartoDisponivel)" type="code"/>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelOcupados">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Quartos Ocupados"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="selectOcupado">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="new DefaultComboBoxModel(this.quartoOcupado)" type="code"/>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelReservado">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Quartos Reservados"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="selectReservado">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="new DefaultComboBoxModel(this.quartoReservado)" type="code"/>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelUsuario">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Usuarios Cadastrados"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="selectUsuario">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="new DefaultComboBoxModel(this.nomeUsuario)" type="code"/>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="checkReserva">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Usuario reservou Quarto?"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="msgErro">
     </Component>
   </SubComponents>
 </Form>

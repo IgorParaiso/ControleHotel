@@ -5,7 +5,12 @@ public class Usuario {
 	private int telefone;
 	
         public Usuario(){
-            
+            this.nome = null;
+            this.cpf = null;
+            this.dataNasc = null;
+            this.telefone = -1;
+            this.paisOrigem = null;
+            this.idiomaAtend = null;
         }
         
 	public Usuario (String nome, String cpf, String dataNasc, int telefone, String paisOrigem, String idiomaAtend) {
@@ -67,7 +72,7 @@ public class Usuario {
         
         @Override
         public String toString(){
-            return nome + "," + cpf + "," + dataNasc + "," + telefone + "," + "," + paisOrigem + "," + idiomaAtend + "\n";
+            return this.nome + "," + this.cpf + "," + this.dataNasc + "," + this.telefone + "," + this.paisOrigem + "," + this.idiomaAtend;
         }
 }
 

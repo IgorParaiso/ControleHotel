@@ -44,25 +44,26 @@ public class LerArquivo {
                 int tipo = Integer.parseInt(dados[0]);
                 int andar = Integer.parseInt(dados[1]);
                 int qntHosp = Integer.parseInt(dados[3]);
-                float fatura = Float.parseFloat(dados[11]);
+                int telefone = Integer.parseInt(dados[8]);
+                float fatura = Float.parseFloat(dados[16]);
                     
                 boolean reservado = Boolean.parseBoolean(dados[4]);
-                boolean limpo = Boolean.parseBoolean(dados[6]);
-                boolean checkin = Boolean.parseBoolean(dados[7]);
-                boolean cafe = Boolean.parseBoolean(dados[9]);
+                boolean limpo = Boolean.parseBoolean(dados[11]);
+                boolean checkin = Boolean.parseBoolean(dados[12]);
+                boolean cafe = Boolean.parseBoolean(dados[14]);
                 
                 switch (tipo){
-                    case 1 -> quarto.CadastrarSimples(new QuartoSimples(andar, dados[2].charAt(0), qntHosp, reservado, new Usuario(), limpo,
+                    case 1 -> quarto.CadastrarSimples(new QuartoSimples(andar, dados[2].charAt(0), qntHosp, reservado, dados[5], dados[6], dados[7], telefone, dados[9], dados[10], limpo,
                                 checkin, dados[8],cafe, dados[10], fatura));
                     case 2 -> {
-                        boolean hidro1 = Boolean.parseBoolean(dados[12]);
-                        quarto.CadastrarConfort(new QuartoConfort(andar, dados[2].charAt(0), qntHosp, reservado, new Usuario(), limpo,
+                        boolean hidro1 = Boolean.parseBoolean(dados[17]);
+                        quarto.CadastrarConfort(new QuartoConfort(andar, dados[2].charAt(0), qntHosp, reservado, dados[5], dados[6], dados[7], telefone, dados[9], dados[10], limpo,
                                 checkin, dados[8],cafe, dados[10], fatura, hidro1));
                     }
                     case 3 -> {
-                        boolean hidro2 = Boolean.parseBoolean(dados[12]);
-                        boolean mordomo = Boolean.parseBoolean(dados[13]);
-                        quarto.CadastrarMaster(new QuartoMaster(andar, dados[2].charAt(0), qntHosp, reservado, new Usuario(), limpo,
+                        boolean hidro2 = Boolean.parseBoolean(dados[17]);
+                        boolean mordomo = Boolean.parseBoolean(dados[18]);
+                        quarto.CadastrarMaster(new QuartoMaster(andar, dados[2].charAt(0), qntHosp, reservado, dados[5], dados[6], dados[7], telefone, dados[9], dados[10], limpo,
                                 checkin, dados[8],cafe, dados[10], fatura, hidro2, mordomo));
                     }
                 }  
