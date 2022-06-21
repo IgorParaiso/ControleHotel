@@ -6,21 +6,21 @@ package telas;
 
 import Quartos.*;
 
-/**
- *
- * @author Igor Paraiso
- */
 public class RespostaAtendimento extends javax.swing.JFrame {
 
     /**
      * Creates new form RespostaAtendimento
+     * @param str
+     * @param room
      */
     public RespostaAtendimento(String str, Quarto room) {
         this.room = room;
         initComponents();
         setLocationRelativeTo(null);
         this.titulo.setText(str);
-        this.jTextPane1.setText(this.room.toString());
+        this.texto = separarDados(this.room.toString());
+        
+        this.jTextPane1.setText(imprimirInfos(this.texto, this.cabecalhoQuarto));
     }
 
     /**
@@ -90,10 +90,32 @@ public class RespostaAtendimento extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     private Quarto room;
+    private String[] texto;
+    private String[] cabecalhoQuarto = {"tipo de Quarto: ", "Andar: ", "Identificador", "Quantidade de Hospedes por Quarto: ",
+    "Quarto Reservado: ", "Usuário responsável pelo quarto: ", "Quarto está limpo? ", "Quarto está ocupado? ", "Tipo de Cama do Quarto: ",
+    "Café da manha incluso? ", "Vista do Quarto: ", "Fatura: ", "Quarto tem Hidromassagem? ", "Quarto tem Mordomo Disponível? "};
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botaoVoltar;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextPane jTextPane1;
     private javax.swing.JLabel titulo;
     // End of variables declaration//GEN-END:variables
+
+    private String[] separarDados(String linha) {
+        String[] dados=null;
+        try{
+            dados = linha.split(",");
+            return dados;
+        } catch (ArrayIndexOutOfBoundsException erro){
+			throw new ArrayIndexOutOfBoundsException ("REGISTRO TEM "+ (dados.length-1) +" INFORMACOES");
+        }
+    }
+
+    private String imprimirInfos(String[] texto, String[] cabecalhoQuarto) {
+        String resultado = "";
+        for (int i = 0; i<texto.length; i++){
+            resultado = resultado + cabecalhoQuarto[i] + texto[i] + "\n";
+        }
+        return resultado;
+    }
 }

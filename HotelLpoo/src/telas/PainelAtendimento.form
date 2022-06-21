@@ -25,33 +25,35 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="botaoVoltar" max="32767" attributes="0"/>
-                  <Component id="msgErro" max="32767" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="botaoVoltar" min="-2" max="-2" attributes="0"/>
+                  <Component id="jScrollPane1" min="-2" pref="81" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
                   <Component id="titulo" min="-2" pref="412" max="-2" attributes="0"/>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="labelUsuario" alignment="0" pref="125" max="32767" attributes="0"/>
-                          <Component id="labelReservado" max="32767" attributes="0"/>
-                          <Component id="labelOcupados" alignment="0" max="32767" attributes="0"/>
-                          <Component id="labelDisponiveis" alignment="0" max="32767" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="labelUsuario" alignment="0" max="32767" attributes="0"/>
+                              <Component id="labelReservado" max="32767" attributes="0"/>
+                              <Component id="labelOcupados" alignment="0" min="-2" pref="125" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="labelDisponiveis" alignment="1" min="-2" pref="125" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="selectDisponiveis" pref="92" max="32767" attributes="0"/>
+                          <Component id="selectDisponiveis" max="32767" attributes="0"/>
                           <Component id="selectOcupado" max="32767" attributes="0"/>
                           <Component id="selectReservado" max="32767" attributes="0"/>
-                          <Component id="selectUsuario" max="32767" attributes="0"/>
+                          <Component id="selectUsuario" min="-2" pref="92" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="botaoCheckOut" max="32767" attributes="0"/>
                           <Component id="botaoCheckIn" max="32767" attributes="0"/>
-                          <Component id="checkReserva" alignment="0" pref="159" max="32767" attributes="0"/>
-                          <Component id="botaoReserva" alignment="0" max="32767" attributes="0"/>
+                          <Component id="checkReserva" alignment="0" max="32767" attributes="0"/>
+                          <Component id="botaoReserva" alignment="0" min="-2" pref="159" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -68,37 +70,41 @@
                   <Component id="titulo" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="labelDisponiveis" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="selectDisponiveis" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="botaoCheckIn" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="msgErro" alignment="3" min="-2" pref="43" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="labelOcupados" min="-2" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="selectOcupado" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="botaoCheckOut" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jScrollPane1" min="-2" pref="96" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="labelDisponiveis" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="selectDisponiveis" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="botaoCheckIn" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="labelOcupados" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                              <Component id="selectOcupado" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="botaoCheckOut" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="labelReservado" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                              <Component id="selectReservado" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="botaoReserva" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="labelUsuario" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                              <Component id="selectUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="checkReserva" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                   </Group>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="labelReservado" min="-2" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="selectReservado" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="botaoReserva" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="labelUsuario" min="-2" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="selectUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="checkReserva" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="108" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -210,7 +216,16 @@
         <Property name="text" type="java.lang.String" value="Usuario reservou Quarto?"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="msgErro">
-    </Component>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTextPane" name="msgErro">
+        </Component>
+      </SubComponents>
+    </Container>
   </SubComponents>
 </Form>

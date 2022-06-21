@@ -201,14 +201,14 @@ public class CriarQuarto extends javax.swing.JFrame {
         String tipoCama = this.CampoTipoCama.getText();
         String vista = this.campoVista.getText();
         
-        boolean cafeDaManha = this.escolheCafe.getSelectedIndex()==1;
+        boolean cafeDaManha = this.escolheCafe.getSelectedIndex()==0;
         boolean hidro = false;
         boolean mordomo = false;
         
-        if(tipoQuarto == 2 ){
-            hidro = this.escolheHidro.getSelectedIndex()==1;
-            if(tipoQuarto == 3){
-                mordomo = this.escolheMordomo.getSelectedIndex()==1;
+        if(tipoQuarto > 1 ){
+            hidro = this.escolheHidro.getSelectedIndex()==0;
+            if(tipoQuarto > 2){
+                mordomo = this.escolheMordomo.getSelectedIndex()==0;
             }
         }
         

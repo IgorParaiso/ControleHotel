@@ -139,7 +139,7 @@ public abstract class Quarto implements Atendimento, Manutencao {
         
         @Override
         public boolean checkin() {
-		if (isLimpo() == true && isReservado() == false && isCheck_in() == false){
+		if (isLimpo() && !isReservado() && !isCheck_in()){
 			this.setCheck_in(true);
 			this.setReservado(true);
 			this.setLimpo(false);
