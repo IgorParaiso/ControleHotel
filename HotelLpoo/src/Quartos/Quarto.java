@@ -7,7 +7,7 @@ import usuario.Usuario;
  * @author Igor Paraiso
  */
 public abstract class Quarto implements Atendimento, Manutencao {
-    private int andar, qntHosp;
+        private int andar, qntHosp;
 	private char identificador;
 	private boolean reservado, limpo, check_in, cafeDaManha;
 	private Usuario usuario;

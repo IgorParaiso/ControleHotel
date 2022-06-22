@@ -18,9 +18,11 @@ public class RespostaAtendimento extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         this.titulo.setText(str);
-        this.texto = separarDados(this.room.toString());
         
-        this.jTextPane1.setText(imprimirInfos(this.texto, this.cabecalhoQuarto));
+        this.msgQuarto.setText("Quarto: " + this.room.getAndar() + this.room.getIdentificador());
+        this.msgUser.setText("Reserva feita no nome de: " + this.room.getUsuario().getNome());
+        
+        
     }
 
     /**
@@ -34,8 +36,9 @@ public class RespostaAtendimento extends javax.swing.JFrame {
 
         titulo = new javax.swing.JLabel();
         botaoVoltar = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextPane1 = new javax.swing.JTextPane();
+        msgQuarto = new javax.swing.JLabel();
+        msgUser = new javax.swing.JLabel();
+        msgValor = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -46,23 +49,21 @@ public class RespostaAtendimento extends javax.swing.JFrame {
             }
         });
 
-        jScrollPane1.setViewportView(jTextPane1);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(botaoVoltar)
-                        .addGap(35, 35, 35)
-                        .addComponent(titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(botaoVoltar)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(msgValor, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(msgUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(msgQuarto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(titulo, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)))
+                .addContainerGap(179, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -72,11 +73,15 @@ public class RespostaAtendimento extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(botaoVoltar))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
+                        .addGap(18, 18, 18)
                         .addComponent(titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(7, 7, 7)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(msgQuarto, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(msgUser, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(msgValor, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(60, Short.MAX_VALUE))
         );
 
         pack();
@@ -91,13 +96,11 @@ public class RespostaAtendimento extends javax.swing.JFrame {
      */
     private Quarto room;
     private String[] texto;
-    private String[] cabecalhoQuarto = {"tipo de Quarto: ", "Andar: ", "Identificador", "Quantidade de Hospedes por Quarto: ",
-    "Quarto Reservado: ", "Usuário responsável pelo quarto: ", "Quarto está limpo? ", "Quarto está ocupado? ", "Tipo de Cama do Quarto: ",
-    "Café da manha incluso? ", "Vista do Quarto: ", "Fatura: ", "Quarto tem Hidromassagem? ", "Quarto tem Mordomo Disponível? "};
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botaoVoltar;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextPane jTextPane1;
+    private javax.swing.JLabel msgQuarto;
+    private javax.swing.JLabel msgUser;
+    private javax.swing.JLabel msgValor;
     private javax.swing.JLabel titulo;
     // End of variables declaration//GEN-END:variables
 

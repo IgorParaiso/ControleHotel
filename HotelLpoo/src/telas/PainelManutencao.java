@@ -31,6 +31,7 @@ public class PainelManutencao extends javax.swing.JFrame {
         botaoLimparHidro = new javax.swing.JToggleButton();
         botaoMordomo = new javax.swing.JToggleButton();
         botaoVoltar = new javax.swing.JToggleButton();
+        msgErro = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -106,7 +107,8 @@ public class PainelManutencao extends javax.swing.JFrame {
                             .addComponent(botaoLimpeza, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(botaoTrocarChuveiro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(botaoAbastecerToalha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(botaoServico, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(botaoServico, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)
+                            .addComponent(msgErro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -126,9 +128,11 @@ public class PainelManutencao extends javax.swing.JFrame {
                 .addComponent(botaoServico)
                 .addGap(18, 18, 18)
                 .addComponent(botaoLimparHidro)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(botaoMordomo)
-                .addContainerGap())
+                .addGap(18, 18, 18)
+                .addComponent(msgErro, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         pack();
@@ -140,26 +144,32 @@ public class PainelManutencao extends javax.swing.JFrame {
 
     private void botaoLimpezaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoLimpezaActionPerformed
         new QuartoManu(this.quarto, 1).setVisible(true);
+        
     }//GEN-LAST:event_botaoLimpezaActionPerformed
 
     private void botaoTrocarChuveiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoTrocarChuveiroActionPerformed
         new QuartoManu(this.quarto, 2).setVisible(true);
+        
     }//GEN-LAST:event_botaoTrocarChuveiroActionPerformed
 
     private void botaoAbastecerToalhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoAbastecerToalhaActionPerformed
         new QuartoManu(this.quarto, 3).setVisible(true);
+        
     }//GEN-LAST:event_botaoAbastecerToalhaActionPerformed
 
     private void botaoServicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoServicoActionPerformed
         new QuartoManu(this.quarto, 4).setVisible(true);
+        
     }//GEN-LAST:event_botaoServicoActionPerformed
 
     private void botaoLimparHidroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoLimparHidroActionPerformed
         new QuartoManu(this.quarto, 5).setVisible(true);
+        
     }//GEN-LAST:event_botaoLimparHidroActionPerformed
 
     private void botaoMordomoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoMordomoActionPerformed
         new QuartoManu(this.quarto, 6).setVisible(true);
+        
     }//GEN-LAST:event_botaoMordomoActionPerformed
     /**
      * @param args the command line arguments
@@ -174,6 +184,9 @@ public class PainelManutencao extends javax.swing.JFrame {
     private javax.swing.JToggleButton botaoServico;
     private javax.swing.JToggleButton botaoTrocarChuveiro;
     private javax.swing.JToggleButton botaoVoltar;
+    private javax.swing.JLabel msgErro;
     private javax.swing.JLabel titulo;
     // End of variables declaration//GEN-END:variables
+
+    
 }

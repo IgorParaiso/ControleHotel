@@ -223,7 +223,7 @@ public class CriarQuarto extends javax.swing.JFrame {
                 case 2:
                     this.list.CadastrarConfort(new QuartoConfort(andar,identificador, qntHosp, tipoCama, cafeDaManha, vista, hidro));
                     break;
-                default:
+                case 3:
                     this.list.CadastrarMaster(new QuartoMaster(andar, identificador, qntHosp, tipoCama, cafeDaManha, vista, hidro, mordomo));
                     break;
             }

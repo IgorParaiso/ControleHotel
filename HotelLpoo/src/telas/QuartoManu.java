@@ -5,6 +5,8 @@
 package telas;
 
 import Quartos.*;
+import gravacao.GravarArquivo;
+import java.io.IOException;
 import javax.swing.DefaultComboBoxModel;
 
 /**
@@ -91,8 +93,8 @@ public class QuartoManu extends javax.swing.JFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(botaoAcao, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(tituloServico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(msgErro, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(130, Short.MAX_VALUE))
+                    .addComponent(msgErro, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(71, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -126,19 +128,23 @@ public class QuartoManu extends javax.swing.JFrame {
         switch(this.idServico){
             case 1:
                 this.quarto.getQuarto(numQ).limpar();
+                gravar(this.quarto);
                 this.dispose();
                 break;
             case 2:
                 this.quarto.getQuarto(numQ).TrocarChuveiro();
+                gravar(this.quarto);
                 this.dispose();
                 break;
             case 3:
                 this.quarto.getQuarto(numQ).AbastecerToalha();
+                gravar(this.quarto);
                 this.dispose();
                 break;
             case 4:
                 if(this.quarto.getQuarto(numQ) instanceof QuartoConfort quartoConfort){
                     quartoConfort.chamarServico();
+                    gravar(this.quarto);
                     this.dispose();
                 } else {
                     this.msgErro.setText("Esse serviço não está disponível para esse quarto");
@@ -148,6 +154,7 @@ public class QuartoManu extends javax.swing.JFrame {
             case 5:
                 if(this.quarto.getQuarto(numQ) instanceof QuartoConfort quartoConfort && quartoConfort.isHidro()){
                     quartoConfort.limparHidro();
+                    gravar(this.quarto);
                     this.dispose();
                 } else {
                     this.msgErro.setText("Esse serviço não está disponível para esse quarto");
@@ -156,6 +163,7 @@ public class QuartoManu extends javax.swing.JFrame {
             case 6:
                 if(this.quarto.getQuarto(numQ) instanceof QuartoMaster quartoMaster && quartoMaster.isMordomo()){
                     quartoMaster.chamarMordomo();
+                    gravar(this.quarto);
                     this.dispose();
                 } else {
                     this.msgErro.setText("Esse serviço não está disponível para esse quarto");
@@ -177,4 +185,17 @@ public class QuartoManu extends javax.swing.JFrame {
     private javax.swing.JLabel msgErro;
     private javax.swing.JLabel tituloServico;
     // End of variables declaration//GEN-END:variables
+    private void gravar(ListaQuarto list) {
+        GravarArquivo gravar;
+            try {
+                gravar = new GravarArquivo("quartos.txt");
+                gravar.grava(list.toString());
+                gravar.fecha();
+                this.dispose();
+            } catch (IOException ex) {
+                this.msgErro.setText("Nao foi possivel salvar");
+                this.msgErro.setVisible(true);
+            }
+    }
+
 }

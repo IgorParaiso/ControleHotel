@@ -39,7 +39,8 @@
                           <Component id="botaoLimpeza" max="32767" attributes="0"/>
                           <Component id="botaoTrocarChuveiro" max="32767" attributes="0"/>
                           <Component id="botaoAbastecerToalha" alignment="0" max="32767" attributes="0"/>
-                          <Component id="botaoServico" alignment="0" min="-2" pref="239" max="-2" attributes="0"/>
+                          <Component id="botaoServico" alignment="0" pref="239" max="32767" attributes="0"/>
+                          <Component id="msgErro" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -65,9 +66,11 @@
               <Component id="botaoServico" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="botaoLimparHidro" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="15" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="botaoMordomo" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="msgErro" min="-2" pref="15" max="-2" attributes="0"/>
+              <EmptySpace pref="23" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -137,6 +140,8 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoVoltarActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="msgErro">
     </Component>
   </SubComponents>
 </Form>

@@ -193,21 +193,27 @@ public class PainelAtendimento extends javax.swing.JFrame {
         if(this.checkReserva.isSelected()){
             String quartoSelecionado = this.selectReservado.getSelectedItem().toString();
             Quarto selecao = this.listaQuarto.getQuarto(this.listaQuarto.busca(quartoSelecionado));
-            if (selecao.checkin()){
-                GravarArquivo gravar;
-                try {
-                    gravar = new GravarArquivo("quartos.txt");
-                    gravar.grava(this.listaQuarto.toString());
-                    gravar.fecha();
-                    this.dispose();
-                    new RespostaAtendimento("CheckIn feito com sucesso", selecao).setVisible(true);
-                } catch (IOException ex) {
-                    this.msgErro.setText("Não foi possível salvar");
-                    this.msgErro.setVisible(true);
+            if (selecao.getUsuario().getNome().equalsIgnoreCase(this.selectUsuario.getSelectedItem().toString()) && selecao.isReservado()){
+                if (selecao.checkin()){
+                    GravarArquivo gravar;
+                    try {
+                        gravar = new GravarArquivo("quartos.txt");
+                        gravar.grava(this.listaQuarto.toString());
+                        gravar.fecha();
+                        this.dispose();
+                        new RespostaAtendimento("CheckIn feito com sucesso", selecao).setVisible(true);
+                    } catch (IOException ex) {
+                        this.msgErro.setText("Não foi possível salvar");
+                        this.msgErro.setVisible(true);
+                    }
+                } else {
+                    this.msgErro.setText("Quarto nao esta pronto para uso");
                 }
             } else {
-                this.msgErro.setText("Quarto nao esta pronto para uso");
+                this.msgErro.setText("Quarto reservado para outro usuário");
             }
+            
+            
         } else {
             Usuario user = this.listaUsuario.getUsuario(this.selectUsuario.getSelectedItem().toString());
             String quartoSelecionado = this.selectDisponiveis.getSelectedItem().toString();
