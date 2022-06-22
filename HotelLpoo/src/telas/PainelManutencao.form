@@ -24,27 +24,28 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="botaoVoltar" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                      <Component id="titulo" min="-2" pref="239" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="botaoMordomo" alignment="1" max="32767" attributes="0"/>
-                          <Component id="botaoLimparHidro" alignment="1" max="32767" attributes="0"/>
-                          <Component id="botaoLimpeza" max="32767" attributes="0"/>
-                          <Component id="botaoTrocarChuveiro" max="32767" attributes="0"/>
-                          <Component id="botaoAbastecerToalha" alignment="0" max="32767" attributes="0"/>
-                          <Component id="botaoServico" alignment="0" pref="239" max="32767" attributes="0"/>
-                          <Component id="msgErro" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="botaoVoltar" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                          <Component id="titulo" min="-2" pref="218" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                          <Component id="botaoLimpeza" min="-2" pref="250" max="-2" attributes="0"/>
                       </Group>
                   </Group>
+                  <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="botaoTrocarChuveiro" max="32767" attributes="0"/>
+                      <Component id="botaoAbastecerToalha" alignment="0" max="32767" attributes="0"/>
+                      <Component id="botaoServico" alignment="0" pref="250" max="32767" attributes="0"/>
+                      <Component id="botaoLimparHidro" alignment="0" max="32767" attributes="0"/>
+                      <Component id="botaoMordomo" alignment="0" max="32767" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="50" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -65,12 +66,10 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="botaoServico" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="botaoLimparHidro" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="botaoLimparHidro" min="-2" pref="22" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               <Component id="botaoMordomo" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="msgErro" min="-2" pref="15" max="-2" attributes="0"/>
-              <EmptySpace pref="23" max="32767" attributes="0"/>
+              <EmptySpace pref="40" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -85,54 +84,6 @@
         <Property name="text" type="java.lang.String" value="Painel Manuten&#xe7;&#xe3;o"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JToggleButton" name="botaoLimpeza">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Chamar a limpeza"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoLimpezaActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JToggleButton" name="botaoTrocarChuveiro">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Solicitar troca de chuveiro"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoTrocarChuveiroActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JToggleButton" name="botaoAbastecerToalha">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Abastecer toalhas"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoAbastecerToalhaActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JToggleButton" name="botaoServico">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Charmar Servi&#xe7;o de Quarto"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoServicoActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JToggleButton" name="botaoLimparHidro">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Limpar hidromassagem"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoLimparHidroActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JToggleButton" name="botaoMordomo">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Chamar Mordomo"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoMordomoActionPerformed"/>
-      </Events>
-    </Component>
     <Component class="javax.swing.JToggleButton" name="botaoVoltar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Voltar"/>
@@ -141,7 +92,53 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoVoltarActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="msgErro">
+    <Component class="javax.swing.JButton" name="botaoLimpeza">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Chamar a limpeza"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoLimpezaActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="botaoTrocarChuveiro">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Solicitar troca de chuveiro"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoTrocarChuveiroActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="botaoAbastecerToalha">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Abastecer toalhas"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoAbastecerToalhaActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="botaoServico">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Charmar Servi&#xe7;o de Quarto"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoServicoActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="botaoLimparHidro">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Limpar hidromassagem"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoLimparHidroActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="botaoMordomo">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Chamar Mordomo"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoMordomoActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

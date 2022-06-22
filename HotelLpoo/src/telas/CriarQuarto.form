@@ -31,31 +31,41 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="labelAndar" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="labelIdentificador" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="labelQntHosp" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="labelTipoCama" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="labelCafeManha" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="labelVista" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="labelHidro" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="labelMordomo" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace pref="9" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="campoVista" pref="85" max="32767" attributes="0"/>
-                          <Component id="CampoTipoCama" max="32767" attributes="0"/>
-                          <Component id="campoQntHosp" max="32767" attributes="0"/>
-                          <Component id="campoIdentificador" max="32767" attributes="0"/>
-                          <Component id="campoAndar" max="32767" attributes="0"/>
-                          <Component id="escolheCafe" min="-2" max="-2" attributes="0"/>
-                          <Component id="escolheHidro" min="-2" max="-2" attributes="0"/>
-                          <Component id="escolheMordomo" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelQntHosp" alignment="0" max="32767" attributes="0"/>
+                          <Component id="labelAndar" alignment="0" max="32767" attributes="0"/>
+                          <Component id="labelIdentificador" alignment="0" max="32767" attributes="0"/>
+                          <Component id="labelTipoCama" alignment="0" max="32767" attributes="0"/>
+                          <Component id="labelCafeManha" alignment="0" max="32767" attributes="0"/>
+                          <Component id="labelVista" alignment="0" max="32767" attributes="0"/>
+                          <Component id="labelHidro" alignment="0" max="32767" attributes="0"/>
+                          <Component id="labelMordomo" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="campoVista" pref="85" max="32767" attributes="0"/>
+                                  <Component id="CampoTipoCama" max="32767" attributes="0"/>
+                                  <Component id="escolheMordomo" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="escolheHidro" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="escolheCafe" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="campoQntHosp" min="-2" pref="85" max="-2" attributes="0"/>
+                                  <Component id="campoIdentificador" min="-2" pref="85" max="-2" attributes="0"/>
+                                  <Component id="campoAndar" min="-2" pref="85" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-              <Component id="msgErro" min="-2" pref="68" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+              <Component id="msgErro" min="-2" pref="133" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
@@ -70,55 +80,52 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="BotaoVoltar" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="labelAndar" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="campoAndar" alignment="3" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="34" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="labelAndar" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="campoAndar" alignment="1" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="labelIdentificador" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="campoIdentificador" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="labelQntHosp" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="campoQntHosp" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="labelIdentificador" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="campoIdentificador" alignment="1" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="3" pref="3" max="-2" attributes="0"/>
-                      <Component id="msgErro" max="32767" attributes="0"/>
-                  </Group>
+                  <Component id="msgErro" alignment="1" min="-2" pref="62" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="labelQntHosp" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="campoQntHosp" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labelTipoCama" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="CampoTipoCama" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labelCafeManha" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="escolheCafe" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labelVista" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="campoVista" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labelHidro" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="escolheHidro" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labelMordomo" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="escolheMordomo" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="BotaoSalvar" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -223,6 +230,9 @@
       </AuxValues>
     </Component>
     <Component class="javax.swing.JLabel" name="msgErro">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

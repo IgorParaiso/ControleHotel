@@ -11,6 +11,10 @@ public class QuartoManu extends javax.swing.JFrame {
      * Creates new form escolherQuarto
      */
     public QuartoManu(ListaQuarto quarto, int idServico) {
+        //na tela anterior definimos um valor para cada metodo que sera chamado aqui
+        //de acordo com o valor enviado na escolha do servico a ser feito, teremos um comportamento diferente
+        //1- limpar, 2- trocar chuveiro, 3- absatecer toalhas, 4- chamar servico (Disponivel apenas para quartos confort e master)
+        //5- limpar hidro (apenas para quartos que tenham hidro, 6- chamar mordom (apenas para quartos que tenham mordomo)
         this.quarto = quarto;
         initComponents();
         setLocationRelativeTo(null);
@@ -20,7 +24,7 @@ public class QuartoManu extends javax.swing.JFrame {
                 this.tituloServico.setText("Escolha o quarto a ser limpo");
                 break;
             case 2:
-                this.tituloServico.setText("Escolha o quarto que precisa de troca de chuveiro");
+                this.tituloServico.setText("Escolha o quarto que precisa um novo de chuveiro");
                 break;
             case 3:
                 this.tituloServico.setText("Escolha o quarto que precisa de toalhas");
@@ -32,7 +36,7 @@ public class QuartoManu extends javax.swing.JFrame {
                 this.tituloServico.setText("Escolha o quarto que a Hidro precisa ser limpa");
                 break;
             case 6:
-                this.tituloServico.setText("Escolha o quarto que precisa de atendimento do Mordomo");
+                this.tituloServico.setText("Escolha o quarto que precisa do Mordomo");
                 break;
         }
         
@@ -53,8 +57,12 @@ public class QuartoManu extends javax.swing.JFrame {
         botaoVoltar = new javax.swing.JToggleButton();
         escolherQuarto = new javax.swing.JComboBox<>();
         msgErro = new javax.swing.JLabel();
+        labelQuarto = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        tituloServico.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        tituloServico.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         botaoAcao.setText("Solicitar");
         botaoAcao.addActionListener(new java.awt.event.ActionListener() {
@@ -72,39 +80,53 @@ public class QuartoManu extends javax.swing.JFrame {
 
         escolherQuarto.setModel(new DefaultComboBoxModel(this.quarto.quartoNums()));
 
+        msgErro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        labelQuarto.setText("Quartos");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(botaoVoltar)
-                .addGap(75, 75, 75)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(escolherQuarto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(botaoAcao, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(tituloServico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(msgErro, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(71, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(botaoVoltar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(tituloServico, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(119, 119, 119)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(botaoAcao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(labelQuarto, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(27, 27, 27)
+                                .addComponent(escolherQuarto, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(msgErro, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addComponent(tituloServico, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(botaoVoltar)))
-                .addGap(41, 41, 41)
-                .addComponent(escolherQuarto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
+                        .addComponent(botaoVoltar))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(tituloServico, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(escolherQuarto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelQuarto))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                 .addComponent(botaoAcao)
-                .addGap(34, 34, 34)
+                .addGap(38, 38, 38)
                 .addComponent(msgErro, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(15, 15, 15))
+                .addGap(26, 26, 26))
         );
 
         pack();
@@ -174,9 +196,11 @@ public class QuartoManu extends javax.swing.JFrame {
     private javax.swing.JToggleButton botaoAcao;
     private javax.swing.JToggleButton botaoVoltar;
     private javax.swing.JComboBox<String> escolherQuarto;
+    private javax.swing.JLabel labelQuarto;
     private javax.swing.JLabel msgErro;
     private javax.swing.JLabel tituloServico;
     // End of variables declaration//GEN-END:variables
+    
     private void gravar(ListaQuarto list) {
         GravarArquivo gravar;
             try {

@@ -24,20 +24,26 @@ public class PainelManutencao extends javax.swing.JFrame {
     private void initComponents() {
 
         titulo = new javax.swing.JLabel();
-        botaoLimpeza = new javax.swing.JToggleButton();
-        botaoTrocarChuveiro = new javax.swing.JToggleButton();
-        botaoAbastecerToalha = new javax.swing.JToggleButton();
-        botaoServico = new javax.swing.JToggleButton();
-        botaoLimparHidro = new javax.swing.JToggleButton();
-        botaoMordomo = new javax.swing.JToggleButton();
         botaoVoltar = new javax.swing.JToggleButton();
-        msgErro = new javax.swing.JLabel();
+        botaoLimpeza = new javax.swing.JButton();
+        botaoTrocarChuveiro = new javax.swing.JButton();
+        botaoAbastecerToalha = new javax.swing.JButton();
+        botaoServico = new javax.swing.JButton();
+        botaoLimparHidro = new javax.swing.JButton();
+        botaoMordomo = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         titulo.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         titulo.setText("Painel Manutenção");
+
+        botaoVoltar.setText("Voltar");
+        botaoVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoVoltarActionPerformed(evt);
+            }
+        });
 
         botaoLimpeza.setText("Chamar a limpeza");
         botaoLimpeza.addActionListener(new java.awt.event.ActionListener() {
@@ -81,35 +87,28 @@ public class PainelManutencao extends javax.swing.JFrame {
             }
         });
 
-        botaoVoltar.setText("Voltar");
-        botaoVoltar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoVoltarActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(botaoVoltar)
-                        .addGap(10, 10, 10)
-                        .addComponent(titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(39, 39, 39)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(botaoMordomo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(botaoLimparHidro, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(botaoLimpeza, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(botaoTrocarChuveiro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(botaoAbastecerToalha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(botaoServico, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)
-                            .addComponent(msgErro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(botaoVoltar)
+                            .addGap(10, 10, 10)
+                            .addComponent(titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addGap(50, 50, 50)
+                            .addComponent(botaoLimpeza, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(botaoTrocarChuveiro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(botaoAbastecerToalha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(botaoServico, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+                        .addComponent(botaoLimparHidro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(botaoMordomo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -127,12 +126,10 @@ public class PainelManutencao extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(botaoServico)
                 .addGap(18, 18, 18)
-                .addComponent(botaoLimparHidro)
+                .addComponent(botaoLimparHidro, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(botaoMordomo)
-                .addGap(18, 18, 18)
-                .addComponent(msgErro, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         pack();
@@ -144,32 +141,26 @@ public class PainelManutencao extends javax.swing.JFrame {
 
     private void botaoLimpezaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoLimpezaActionPerformed
         new QuartoManu(this.quarto, 1).setVisible(true);
-        
     }//GEN-LAST:event_botaoLimpezaActionPerformed
 
     private void botaoTrocarChuveiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoTrocarChuveiroActionPerformed
         new QuartoManu(this.quarto, 2).setVisible(true);
-        
     }//GEN-LAST:event_botaoTrocarChuveiroActionPerformed
 
     private void botaoAbastecerToalhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoAbastecerToalhaActionPerformed
         new QuartoManu(this.quarto, 3).setVisible(true);
-        
     }//GEN-LAST:event_botaoAbastecerToalhaActionPerformed
 
     private void botaoServicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoServicoActionPerformed
         new QuartoManu(this.quarto, 4).setVisible(true);
-        
     }//GEN-LAST:event_botaoServicoActionPerformed
 
     private void botaoLimparHidroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoLimparHidroActionPerformed
         new QuartoManu(this.quarto, 5).setVisible(true);
-        
     }//GEN-LAST:event_botaoLimparHidroActionPerformed
 
     private void botaoMordomoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoMordomoActionPerformed
         new QuartoManu(this.quarto, 6).setVisible(true);
-        
     }//GEN-LAST:event_botaoMordomoActionPerformed
     /**
      * @param args the command line arguments
@@ -177,14 +168,13 @@ public class PainelManutencao extends javax.swing.JFrame {
 
     private ListaQuarto quarto;
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JToggleButton botaoAbastecerToalha;
-    private javax.swing.JToggleButton botaoLimparHidro;
-    private javax.swing.JToggleButton botaoLimpeza;
-    private javax.swing.JToggleButton botaoMordomo;
-    private javax.swing.JToggleButton botaoServico;
-    private javax.swing.JToggleButton botaoTrocarChuveiro;
+    private javax.swing.JButton botaoAbastecerToalha;
+    private javax.swing.JButton botaoLimparHidro;
+    private javax.swing.JButton botaoLimpeza;
+    private javax.swing.JButton botaoMordomo;
+    private javax.swing.JButton botaoServico;
+    private javax.swing.JButton botaoTrocarChuveiro;
     private javax.swing.JToggleButton botaoVoltar;
-    private javax.swing.JLabel msgErro;
     private javax.swing.JLabel titulo;
     // End of variables declaration//GEN-END:variables
 
