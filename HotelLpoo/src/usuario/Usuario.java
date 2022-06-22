@@ -70,6 +70,7 @@ public class Usuario {
 		this.idiomaAtend = idiomaAtend;
 	}
         
+        //O arqvuivo a ser gerado pelo programa é um csv, portanto o método toString foi alterado para comportar essa necessidade
         @Override
         public String toString(){
             return this.nome + "," + this.cpf + "," + this.dataNasc + "," + this.telefone + "," + this.paisOrigem + "," + this.idiomaAtend;

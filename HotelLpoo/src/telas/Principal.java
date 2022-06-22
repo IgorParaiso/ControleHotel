@@ -6,28 +6,7 @@ import gravacao.*;
 import java.io.FileNotFoundException;
 
 public class Principal extends javax.swing.JFrame {
-
-    private void carregar() {
-        LerArquivo ler;
-        try {
-            
-            ler = new LerArquivo("usuario.txt");
-            this.listaUsuario = ler.lerUsuario();
-            ler.fecha();
-            
-            ler = new LerArquivo("quartos.txt");
-            this.listaQuarto = ler.lerQuartos();
-            ler.fecha();
-            
-        } catch (FileNotFoundException ex) {
-            this.botaoAtendimento.setVisible(false);
-            this.botaoCadastrarQuarto.setVisible(false);
-            this.botaoCadastrarUsuario.setVisible(false);
-            this.botaoManutencao.setVisible(false);
-            this.titulo.setText("Base de dados não encontrada!!!");
-        }
-    }
-
+    
     /**
      * Creates new form Principal
      */
@@ -205,5 +184,25 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel titulo;
     // End of variables declaration//GEN-END:variables
 
-
+    //Método para carregar os arquivos de usuários e quartos
+    private void carregar() {
+        LerArquivo ler;
+        try {
+            
+            ler = new LerArquivo("usuario.txt");
+            this.listaUsuario = ler.lerUsuario();
+            ler.fecha();
+            
+            ler = new LerArquivo("quartos.txt");
+            this.listaQuarto = ler.lerQuartos();
+            ler.fecha();
+            
+        } catch (FileNotFoundException ex) {
+            this.botaoAtendimento.setVisible(false);
+            this.botaoCadastrarQuarto.setVisible(false);
+            this.botaoCadastrarUsuario.setVisible(false);
+            this.botaoManutencao.setVisible(false);
+            this.titulo.setText("Base de dados não encontrada!!!");
+        }
+    }
 }

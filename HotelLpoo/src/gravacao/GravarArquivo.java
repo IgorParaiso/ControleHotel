@@ -6,6 +6,7 @@ public class GravarArquivo {
     private FileWriter writer;
     private PrintWriter saida;
     
+    
     public GravarArquivo (String nome) throws IOException{
         try {
             writer = new FileWriter(new File(nome), false);

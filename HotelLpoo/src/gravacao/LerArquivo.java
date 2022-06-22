@@ -37,6 +37,9 @@ public class LerArquivo {
         ListaQuarto quarto = new ListaQuarto();
         String linha;
         
+        
+        //para a leitura do arquivo de quartos, para diferenciar cada tipo de quarto no momento da leitura,
+        //definimos que o indice 1, equivale a um quarto simples, o indice 2 a um quarto confort e o indice 3 a um quarto master
         while(this.entrada.hasNext()){
             linha = this.entrada.nextLine();
             String[] dados = separarDados(linha);

@@ -150,10 +150,11 @@ public class PainelAtendimento extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(labelDisponiveis)
-                            .addComponent(selectDisponiveis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(botaoCheckIn))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(labelDisponiveis, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(selectDisponiveis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(botaoCheckIn)))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(labelOcupados)
@@ -225,8 +226,7 @@ public class PainelAtendimento extends javax.swing.JFrame {
                     this.msgErro.setVisible(true);
                 }
             } else {
-                this.msgErro.setText("Quarto nao esta pronto para uso\n" + "Quarto está limpo? " + selecao.isLimpo()
-                + "\nQuarto está Reservado? " + selecao.isReservado());
+                this.msgErro.setText("Quarto precisa ser limpo antes de receber um hospede");
             }
         }
     }//GEN-LAST:event_botaoCheckInActionPerformed

@@ -13,6 +13,7 @@ public class ListaUsuario {
         this.listaUsuario.add(usuario);
     }
     
+    //Método para procurar um usuário a partir do nome
     public Usuario getUsuario (String nome){
         for (Usuario lista : this.listaUsuario) {
             if(lista.getNome().equalsIgnoreCase(nome)){
@@ -22,15 +23,7 @@ public class ListaUsuario {
         return null;
     }
     
-    public boolean remover(String nome){
-        Usuario aux = this.getUsuario(nome);
-        if(aux != null){
-            this.listaUsuario.remove(aux);
-            return true;
-        }
-        return false;
-    }
-    
+    //Método para criar um vetor que irá fornecer os nomes que irão aparecer no Dropdown quando necessário
     public String[] nomeUser(){
         String[] resultado = new String[this.listaUsuario.size()];
         for(int i = 0; i<this.listaUsuario.size(); i++){

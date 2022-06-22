@@ -2,15 +2,19 @@ package Quartos;
 
 import usuario.Usuario;
 
+
 public abstract class Quarto implements Atendimento, Manutencao {
-        private int andar, qntHosp;
-	private char identificador;
-	private boolean reservado, limpo, check_in, cafeDaManha;
-	private Usuario usuario;
-	private String tipoCama, vista;
-	private float fatura;
-        private static double valorBase;
+    
+    private int andar, qntHosp;
+    private char identificador;
+    private boolean reservado, limpo, check_in, cafeDaManha;
+    private Usuario usuario;
+    private String tipoCama, vista;
+    private float fatura;
+    private static double valorBase;
 	
+    
+        //implementacao do construtor para a criacao de um novo quarto no sistema
 	public Quarto(int andar, char identificador, int qntHosp, String tipoCama, boolean cafeDaManha,
 			String vista){
 		this.andar = andar;
@@ -26,6 +30,7 @@ public abstract class Quarto implements Atendimento, Manutencao {
 		this.fatura = 0;
 	}
         
+        //implementacao de um construtor para a leitura dos quartos a partir do arquivo de origem
         public Quarto(int andar, char identificador, int qntHosp, boolean reservado, String nome, String cpf, String dataNasc, int telefone, String paisOrigem, String idiomaAtend,
 			boolean limpo, boolean check_in, String tipoCama, boolean cafeDaManha,
 			String vista, float fatura){
@@ -113,10 +118,6 @@ public abstract class Quarto implements Atendimento, Manutencao {
 		this.vista = vista;
 	}
 
-	public double getValorBase() {
-		return this.valorBase;
-	}
-
 	public float getFatura() {
 		return this.fatura;
 	}
@@ -124,6 +125,8 @@ public abstract class Quarto implements Atendimento, Manutencao {
 		this.fatura = fatura;
 	}
         
+        
+        //metodo que altera o estado do quarto de sujo para limpo
         @Override
         public void limpar() {
 		if(!this.isLimpo()){
@@ -131,6 +134,7 @@ public abstract class Quarto implements Atendimento, Manutencao {
                 }
 	}
         
+        //metodo que torna o quarto ocupado, e muda o status de limpo para sujo
         @Override
         public boolean checkin() {
 		if (isLimpo()){
@@ -143,6 +147,7 @@ public abstract class Quarto implements Atendimento, Manutencao {
                 return false;
 	}
         
+        //metodo que vincula um usuario a um quarto e altera o seu status de livre para reservado
         @Override
         public void fazerReserva(Usuario user) {
             this.usuario = user;

@@ -7,11 +7,13 @@ public class QuartoMaster extends QuartoConfort {
     private boolean mordomo;
     private double valorBase = 80;
     
+    //implementacao do construtor para a criacao de um novo quarto no sistema
     public QuartoMaster (int andar, char identificador, int qntHosp,String tipoCama, boolean cafeDaManha, String vista, boolean hidro, boolean mordomo){
         super(andar, identificador, qntHosp, tipoCama, cafeDaManha, vista, hidro);
 	this.mordomo = mordomo;
     }
     
+    //implementacao de um construtor para a leitura dos quartos a partir do arquivo de origem
     public QuartoMaster (int andar, char identificador, int qntHosp, boolean reservado, String nome, String cpf, String dataNasc, int telefone, String paisOrigem, String idiomaAtend,
 			boolean limpo, boolean check_in, String tipoCama, boolean cafeDaManha,
 			String vista, float fatura, boolean hidro, boolean mordomo){
@@ -31,6 +33,8 @@ public class QuartoMaster extends QuartoConfort {
         super.setFatura(super.getFatura() + 200);
     }
 
+    //Metodo que implementa a situacao de quando e necessario fazer a troca de um chuveiro 
+    //e o valor sera cobrado do usuario, caso ele esteja hospedado no momento do defeito
     @Override
     public void TrocarChuveiro() {
 	if (super.isCheck_in()){
@@ -45,6 +49,7 @@ public class QuartoMaster extends QuartoConfort {
         }
     }
     
+    //metodo que retira um usuario de um quarto e retorna para o programa o valor a ser pago
     @Override
 	public double checkout() {
             super.setUsuario(new Usuario());
