@@ -5,11 +5,6 @@ import Quartos.*;
 import gravacao.*;
 import java.io.FileNotFoundException;
 
-
-/**
- *
- * @author Igor Paraiso
- */
 public class Principal extends javax.swing.JFrame {
 
     private void carregar() {

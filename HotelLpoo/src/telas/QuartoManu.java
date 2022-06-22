@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package telas;
 
 import Quartos.*;
@@ -9,10 +5,6 @@ import gravacao.GravarArquivo;
 import java.io.IOException;
 import javax.swing.DefaultComboBoxModel;
 
-/**
- *
- * @author Igor Paraiso
- */
 public class QuartoManu extends javax.swing.JFrame {
 
     /**

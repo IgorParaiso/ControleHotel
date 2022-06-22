@@ -2,17 +2,14 @@ package Quartos;
 
 import usuario.Usuario;
 
-/**
- *
- * @author Igor Paraiso
- */
 public abstract class Quarto implements Atendimento, Manutencao {
         private int andar, qntHosp;
 	private char identificador;
 	private boolean reservado, limpo, check_in, cafeDaManha;
 	private Usuario usuario;
 	private String tipoCama, vista;
-	private float valorBase, fatura;
+	private float fatura;
+        private static double valorBase;
 	
 	public Quarto(int andar, char identificador, int qntHosp, String tipoCama, boolean cafeDaManha,
 			String vista){
@@ -46,56 +43,56 @@ public abstract class Quarto implements Atendimento, Manutencao {
 	}
 
 	public int getAndar() {
-		return andar;
+		return this.andar;
 	}
 	public void setAndar(int andar) {
 		this.andar = andar;
 	}
 
 	public int getQntHosp() {
-		return qntHosp;
+		return this.qntHosp;
 	}
 	public void setQntHosp(int qntHosp) {
 		this.qntHosp = qntHosp;
 	}
 
 	public char getIdentificador() {
-		return identificador;
+		return this.identificador;
 	}
 	public void setIdentificador(char identificador) {
 		this.identificador = identificador;
 	}
 
 	public boolean isReservado() {
-		return reservado;
+		return this.reservado;
 	}
 	public void setReservado(boolean estado) {
             this.reservado = estado;        
 	}
 
 	public boolean isLimpo() {
-		return limpo;
+		return this.limpo;
 	}
 	public void setLimpo(boolean estado) {
 		this.limpo = estado;
 	}
 
 	public boolean isCheck_in() {
-		return check_in;
+		return this.check_in;
 	}
 	public void setCheck_in(boolean estado) {
 		this.check_in = estado;
 	}
 
 	public boolean isCafeDaManha() {
-		return cafeDaManha;
+		return this.cafeDaManha;
 	}
 	public void setCafeDaManha(boolean cafeDaManha) {
 		this.cafeDaManha = cafeDaManha;
 	}
 
 	public Usuario getUsuario() {
-		return usuario;
+		return this.usuario;
 	}
         
         public void setUsuario(Usuario usuario){
@@ -103,7 +100,7 @@ public abstract class Quarto implements Atendimento, Manutencao {
         }
 
 	public String getTipoCama() {
-		return tipoCama;
+		return this.tipoCama;
 	}
 	public void setTipoCama(String tipoCama) {
 		this.tipoCama = tipoCama;
@@ -116,15 +113,12 @@ public abstract class Quarto implements Atendimento, Manutencao {
 		this.vista = vista;
 	}
 
-	public float getValorBase() {
-		return valorBase;
-	}
-	public void setValorBase(float valorBase) {
-		this.valorBase = valorBase;
+	public double getValorBase() {
+		return this.valorBase;
 	}
 
 	public float getFatura() {
-		return fatura;
+		return this.fatura;
 	}
 	public void setFatura(float fatura) {
 		this.fatura = fatura;
@@ -139,7 +133,7 @@ public abstract class Quarto implements Atendimento, Manutencao {
         
         @Override
         public boolean checkin() {
-		if (isLimpo() && !isReservado() && !isCheck_in()){
+		if (isLimpo()){
 			this.setCheck_in(true);
 			this.setReservado(true);
 			this.setLimpo(false);
@@ -147,17 +141,6 @@ public abstract class Quarto implements Atendimento, Manutencao {
                         return true;
 		}
                 return false;
-	}
-        
-        @Override
-	public double checkout() {
-            this.setUsuario(new Usuario());
-            this.setReservado(false);
-            this.setCheck_in(false);
-            
-            double valorFinal = this.getValorBase() + this.getFatura();
-            return valorFinal;
-                
 	}
         
         @Override

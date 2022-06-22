@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package telas;
 
 import Quartos.*;
@@ -10,10 +6,6 @@ import java.io.IOException;
 import javax.swing.DefaultComboBoxModel;
 import usuario.*;
 
-/**
- *
- * @author Igor Paraiso
- */
 public class PainelAtendimento extends javax.swing.JFrame {
 
     /**
@@ -29,6 +21,7 @@ public class PainelAtendimento extends javax.swing.JFrame {
         this.quartoOcupado = this.listaQuarto.buscarOcupados();
         this.quartoReservado = this.listaQuarto.buscarReservados();
         this.nomeUsuario = this.listaUsuario.nomeUser();
+        this.valor = 0;
         initComponents();
         setLocationRelativeTo(null);
     }
@@ -201,7 +194,8 @@ public class PainelAtendimento extends javax.swing.JFrame {
                         gravar.grava(this.listaQuarto.toString());
                         gravar.fecha();
                         this.dispose();
-                        new RespostaAtendimento("CheckIn feito com sucesso", selecao).setVisible(true);
+                        new RespostaAtendimento("CheckIn feito com sucesso", this.selectReservado.getSelectedItem().toString(), 
+                                this.selectUsuario.getSelectedItem().toString(), valor).setVisible(true);
                     } catch (IOException ex) {
                         this.msgErro.setText("Não foi possível salvar");
                         this.msgErro.setVisible(true);
@@ -212,8 +206,6 @@ public class PainelAtendimento extends javax.swing.JFrame {
             } else {
                 this.msgErro.setText("Quarto reservado para outro usuário");
             }
-            
-            
         } else {
             Usuario user = this.listaUsuario.getUsuario(this.selectUsuario.getSelectedItem().toString());
             String quartoSelecionado = this.selectDisponiveis.getSelectedItem().toString();
@@ -226,7 +218,8 @@ public class PainelAtendimento extends javax.swing.JFrame {
                     gravar.grava(this.listaQuarto.toString());
                     gravar.fecha();
                     this.dispose();
-                    new RespostaAtendimento("CheckIn feito com sucesso", selecao).setVisible(true);
+                    new RespostaAtendimento("CheckIn feito com sucesso", this.selectDisponiveis.getSelectedItem().toString(), 
+                                this.selectUsuario.getSelectedItem().toString(), valor).setVisible(true);
                 } catch (IOException ex) {
                     this.msgErro.setText("Não foi possível salvar");
                     this.msgErro.setVisible(true);
@@ -241,8 +234,8 @@ public class PainelAtendimento extends javax.swing.JFrame {
     private void botaoCheckOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCheckOutActionPerformed
         String quartoSelecionado = this.selectOcupado.getSelectedItem().toString();
         Quarto selecao = this.listaQuarto.getQuarto(this.listaQuarto.busca(quartoSelecionado));
-        
-        double pagar = selecao.checkout();
+        String nomeSel = selecao.getUsuario().getNome();
+        double valor = selecao.checkout();
         
         GravarArquivo gravar;
                 try {
@@ -250,7 +243,8 @@ public class PainelAtendimento extends javax.swing.JFrame {
                     gravar.grava(this.listaQuarto.toString());
                     gravar.fecha();
                     this.dispose();
-                    new RespostaAtendimento("CheckIn feito com sucesso", selecao).setVisible(true);
+                    new RespostaAtendimento("Checkout feito com sucesso", this.selectOcupado.getSelectedItem().toString(), 
+                                nomeSel, valor).setVisible(true);
                 } catch (IOException ex) {
                     this.msgErro.setText("Não foi possível salvar");
                     this.msgErro.setVisible(true);
@@ -269,7 +263,8 @@ public class PainelAtendimento extends javax.swing.JFrame {
             gravar.grava(this.listaQuarto.toString());
             gravar.fecha();
             this.dispose();
-            new RespostaAtendimento("Quarto reservado com sucesso", selecao).setVisible(true);
+            new RespostaAtendimento("Quarto reservado com sucesso", this.selectReservado.getSelectedItem().toString(), 
+                                this.selectUsuario.getSelectedItem().toString(), valor).setVisible(true);
         } catch (IOException ex) {
             this.msgErro.setText("Não foi possível salvar");
             this.msgErro.setVisible(true);
@@ -283,6 +278,7 @@ public class PainelAtendimento extends javax.swing.JFrame {
     private ListaUsuario listaUsuario;
     private ListaQuarto listaQuarto;
     private String[] quartoDisponivel, quartoOcupado, quartoReservado, nomeUsuario;
+    private double valor;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botaoCheckIn;
     private javax.swing.JButton botaoCheckOut;

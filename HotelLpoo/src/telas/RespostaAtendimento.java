@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package telas;
 
 import Quartos.*;
@@ -13,14 +9,16 @@ public class RespostaAtendimento extends javax.swing.JFrame {
      * @param str
      * @param room
      */
-    public RespostaAtendimento(String str, Quarto room) {
-        this.room = room;
+    public RespostaAtendimento(String str, String quarto, String nome, double valor) {
         initComponents();
         setLocationRelativeTo(null);
         this.titulo.setText(str);
         
-        this.msgQuarto.setText("Quarto: " + this.room.getAndar() + this.room.getIdentificador());
-        this.msgUser.setText("Reserva feita no nome de: " + this.room.getUsuario().getNome());
+        this.msgQuarto.setText("Quarto: " + quarto);
+        this.msgUser.setText("Reserva feita no nome de: " + nome);
+        if (valor > 0){
+            this.msgValor.setText("O valor a ser pago é de R$ " + valor);
+        }
         
         
     }
@@ -103,22 +101,4 @@ public class RespostaAtendimento extends javax.swing.JFrame {
     private javax.swing.JLabel msgValor;
     private javax.swing.JLabel titulo;
     // End of variables declaration//GEN-END:variables
-
-    private String[] separarDados(String linha) {
-        String[] dados=null;
-        try{
-            dados = linha.split(",");
-            return dados;
-        } catch (ArrayIndexOutOfBoundsException erro){
-			throw new ArrayIndexOutOfBoundsException ("REGISTRO TEM "+ (dados.length-1) +" INFORMACOES");
-        }
-    }
-
-    private String imprimirInfos(String[] texto, String[] cabecalhoQuarto) {
-        String resultado = "";
-        for (int i = 0; i<texto.length; i++){
-            resultado = resultado + cabecalhoQuarto[i] + texto[i] + "\n";
-        }
-        return resultado;
-    }
 }

@@ -5,7 +5,7 @@ import usuario.Usuario;
 public class QuartoMaster extends QuartoConfort {
     
     private boolean mordomo;
-    private static float valorBase = 80;
+    private double valorBase = 80;
     
     public QuartoMaster (int andar, char identificador, int qntHosp,String tipoCama, boolean cafeDaManha, String vista, boolean hidro, boolean mordomo){
         super(andar, identificador, qntHosp, tipoCama, cafeDaManha, vista, hidro);
@@ -44,6 +44,17 @@ public class QuartoMaster extends QuartoConfort {
             super.setFatura(super.getFatura() + 80);
         }
     }
+    
+    @Override
+	public double checkout() {
+            super.setUsuario(new Usuario());
+            super.setReservado(false);
+            super.setCheck_in(false);
+            
+            double valorFinal = valorBase + super.getFatura();
+            return valorFinal;
+                
+	}
     
     @Override
     public String toString(){

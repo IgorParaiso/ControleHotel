@@ -5,11 +5,6 @@ import usuario.ListaUsuario;
 import gravacao.GravarArquivo;
 import java.io.IOException;
 
-
-/**
- *
- * @author Igor Paraiso
- */
 public class CadastrarUsuario extends javax.swing.JFrame {
 
     /**
