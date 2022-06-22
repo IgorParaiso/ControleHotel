@@ -44,7 +44,6 @@ public class CadastrarUsuario extends javax.swing.JFrame {
         botaoVoltar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(600, 415));
 
         titulo.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
